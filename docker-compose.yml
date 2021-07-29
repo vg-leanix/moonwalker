@@ -1,0 +1,45 @@
+version: "3"
+
+services:
+  frontend:
+    build: ./frontend/
+    restart: on-failure
+    container_name: frontend
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on: 
+      - backend
+      
+    volumes: 
+      - ./frontend:/app
+      
+    command: npm run dev
+    networks:
+      - moonshot_net
+
+
+  backend:
+    build: ./backend/
+    container_name: backend
+    restart: on-failure
+    environment: 
+      MONGODB: mongodb://mongodb2
+      RABBITMQ: pyamqp://rabbitmq
+    volumes:
+      - type: bind
+        source: ./backend/app/api.py
+        target: /usr/app/api.py
+     
+        
+    command: uvicorn --host=0.0.0.0 --port=8000 app.api:app --reload
+    ports:
+      - "8000:8000"
+    
+    networks:
+      - moonshot_net
+
+
+networks:
+  moonshot_net:
+
