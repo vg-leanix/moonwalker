@@ -8,7 +8,7 @@ import app.utils.put_processor as int_api
 
 K8S_PROCESSOR = "app/modules/k8s.json"
 router = APIRouter(
-    # prefix="/v1/auth",
+    # psrefix="/v1/auth",
     tags=["auth"],
 )
 
