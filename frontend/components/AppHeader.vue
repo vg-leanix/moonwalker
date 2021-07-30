@@ -8,7 +8,7 @@
     <nav
       class="flex justify-center   "
     >
-      <p class=" font-lix text-5xl font-thin text-gray-200">Workspace Setup</p>
+      <p class=" font-lix text-5xl font-thin text-gray-200">MI Workspace Setup</p>
      
     </nav>
     </div>

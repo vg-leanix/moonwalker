@@ -1,4 +1,5 @@
 <template>
+<div>
   <div
     class="
       w-full
@@ -18,14 +19,13 @@
         class="flex flex-col items-center"
         v-on:submit.prevent=""
         v-on:submit="sendConfig"
-        @input="capitalizeLetter"
       >
         <div class="w-1/2">
           <div class="mt-1 relative rounded-md shadow-sm">
             <label
               for="instance"
               class="block text-sm font-medium text-gray-700"
-              >Choose an instance:</label
+              >Choose the instance on which WS exists:</label
             >
 
             <select
@@ -52,14 +52,14 @@
           </div>
           <div class="mt-6 relative rounded-md shadow-sm">
             <label
-              for="wsEdition"
+              for="wsExtension"
               class="block text-sm font-medium text-gray-700"
-              >Choose an workspace edition:</label
+              >Choose provisioning extension to be applied:</label
             >
 
             <select
-              name="wsEdition"
-              v-model="config.edition"
+              name="wsExtension"
+              v-model="config.extension"
               id="mtmToken"
               class="
                 focus:ring-indigo-500
@@ -74,33 +74,10 @@
                 w-full
               "
             >
-              <option v-for="key in this.$store.state.wsOptions" :key="key">
+              <option v-for="key in this.$store.state.extensionOptions" :key="key">
                 {{ key }}
               </option>
             </select>
-          </div>
-          <div class="mt-6 relative rounded-md shadow-sm">
-            <label for="wsName" class="block text-sm font-medium text-gray-700"
-              >Choose a workspace name:</label
-            >
-
-            <input
-              name="wsName"
-              v-model="config.wsName"
-              id="wsName"
-              class="
-                focus:ring-indigo-500
-                focus:border-indigo-500
-                block
-                pl-7
-                pr-12
-                sm:text-sm
-                border-gray-300
-                rounded-md
-                p-2
-                w-full
-              "
-            />
           </div>
         </div>
 
@@ -108,7 +85,7 @@
           <label
             for="apiToken"
             class="block text-sm font-medium text-gray-700 mt-6"
-            >Enter Technical User API Token:</label
+            >Enter API Token created on WS (superadmin):</label
           >
           <div class="mt-1 relative rounded-md shadow-sm">
             <input
@@ -205,23 +182,28 @@
       </form>
     </div>
   </div>
+</div>
 </template>
 
 <script>
+
 export default {
   name: "settings",
   data() {
     return {
       config: {
-        edition: "",
-        instance: "",
-        apiToken: "DJHVwgKQS4sswPZPrUtLbamVHD6xFueGcjwpQkO3",
-        wsName: "",
+        extension: "",
+        host: "",
+        apiToken: "",
+        addBaseModel: false
       },
     };
   },
   methods: {
     sendConfig() {
+      if(this.config.extension.contains('mi-')){
+        this.config.addBaseModel = true
+      }
       this.$store.dispatch("sendConfig", this.config);
     },
     capitalizeLetter() {

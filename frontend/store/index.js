@@ -1,18 +1,12 @@
 export const state = () => ({
-  wsOptions: { 'mi-k8s': 'MI with K8s', 'mi-base': 'MI - base' },
-  hostOptions: ['demo-eu'],
-  mtmToken: "",
-  wsToken: "",
-  apiBusy: false,
+  extensionOptions: {'mi-base': 'MI - base','k8s': 'MI K8s','gh': 'MI Github','sq': 'MI Soanrqube','mi-k8s': 'MI with K8s', 'mi-gh': 'MI with Github','mi-sq': 'MI with Sonarqube'},
+  hostOptions: ['demo-eu','demo-eu-1'],
+  isLoading: false,
   apiErrorCode: false,
   apiError: "",
   apiSuccess: false,
   apiSuccessMessage: "",
   showSubmit: true
-
-
-
-
 
 })
 
@@ -31,16 +25,12 @@ export const mutations = {
   },
   changeApiSuccess(state) {
     state.apiSuccess = true
-    state.apiSuccessMessage = "Workspace sucessfully created. Enjoy!"
+    state.apiSuccessMessage = "Extension sucessfully applied. Enjoy!"
     state.showSubmit = false
   },
 
-  setApiReady(state) {
-    state.apiBusy = false
-  },
-
-  setApiBusy(state) {
-    state.apiBusy = true
+  setLoading(val) {
+    state.isLoading = val
   }
 
 }
@@ -53,6 +43,12 @@ export const actions = {
   // API Calls //
   
   async sendConfig({ commit }, payload) {
+    const finalPayload = {
+      extension:[payload.extension],
+      host: payload.host,
+      apiToken:payload.apiToken,
+      addBaseModel:payload.addBaseModel
+    }
 
     // let configJson = JSON.stringify(payload)
     console.log(payload)
@@ -62,14 +58,14 @@ export const actions = {
       },
 
     };
-    commit('setApiBusy')
-    const send = await this.$axios.$post('/createws', payload, config)
+    commit('setLoading', true)
+    const send = await this.$axios.$post('/createws', finalPayload, config)
       .then((res) => {
 
         if (res.status == 200) {
 
           commit('changeApiSuccess');
-          commit('setApiReady')
+          commit('setLoading', false)
         }
 
         else if (res.status == 400) {
@@ -82,7 +78,7 @@ export const actions = {
         let stringErr = String(err)
 
         commit('changeApiError', stringErr);
-        commit('setApiReady')
+        commit('setLoading', false)
       })
 
   }
