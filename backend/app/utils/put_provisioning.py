@@ -8,13 +8,14 @@ class ProvisionReqBody(BaseModel):
     extensions: List[str]
     api_token: str
 
-def put_provisioning(host: str, jwt_token: str, apply_base_model: bool, extenstions: List[str]):
+def put_provisioning(host: str, jwt_token: str, apply_base_model: bool, extensions: List[str]):
     pass
     request_url = f'https://{host}.leanix.net/services/provisioning/v1/provision'
     auth_header = 'Bearer ' + jwt_token
     header = {'Authorization': auth_header, "Content-Type": "application/json"}
+    print("line 16 put ", extensions)
     reqBody: ProvisionReqBody = {
-        extenstions: extenstions
+        extensions: extensions
     }
 
     parameters = {

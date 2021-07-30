@@ -74,8 +74,8 @@
                 w-full
               "
             >
-              <option v-for="key in this.$store.state.extensionOptions" :key="key">
-                {{ key }}
+              <option v-for="item in this.$store.state.extensionOptions" :key="item.key">
+                {{ item.value }}
               </option>
             </select>
           </div>
@@ -201,9 +201,36 @@ export default {
   },
   methods: {
     sendConfig() {
-      if(this.config.extension.contains('mi-')){
+      console.log("inside settings send config")
+      if(this.config.extension == 'MI - base'){
         this.config.addBaseModel = true
+        this.config.extension = '' //doubt
       }
+      if(this.config.extension == 'MI Sonarqube'){
+        this.config.addBaseModel = false
+        this.config.extension = 'mi-sq'
+      }
+      if(this.config.extension == 'MI K8s'){
+        this.config.addBaseModel = false
+        this.config.extension = 'mi-k8s'
+      }
+      if(this.config.extension == 'MI Github'){
+        this.config.addBaseModel = false
+        this.config.extension = 'mi-gh'
+      }
+      if(this.config.extension == 'MI with K8s'){
+        this.config.addBaseModel = true
+        this.config.extension = 'mi-k8s'
+      }
+       if(this.config.extension == 'MI with Github'){
+        this.config.addBaseModel = true
+        this.config.extension = 'mi-gh'
+      }
+       if(this.config.extension == 'MI with Sonarqube'){
+        this.config.addBaseModel = true
+        this.config.extension = 'mi-sq'
+      }
+      console.log("after if conditions", this.config)
       this.$store.dispatch("sendConfig", this.config);
     },
     capitalizeLetter() {
@@ -218,7 +245,7 @@ export default {
     },
   },
   mounted() {
-    
+    console.log(this.$store.state.extensionOptions)
   },
 };
 </script>
