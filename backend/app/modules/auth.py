@@ -14,10 +14,10 @@ router = APIRouter(
 
 
 class Config(BaseModel):
-    host: str
-    mtmToken: str
     apiToken: str
-    ws_edition: str
+    edition: str
+    instance: str
+    wsName: str
 
 
 @router.post("/createws", tags=["auth"])

@@ -54,16 +54,16 @@ export const actions = {
   
   async sendConfig({ commit }, payload) {
 
-    let configJson = JSON.stringify(payload)
-
+    // let configJson = JSON.stringify(payload)
+    console.log(payload)
     var config = {
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json; charset=UTF-8",
       },
 
     };
     commit('setApiBusy')
-    const send = await this.$axios.$post('http://localhost/8000/createws', configJson, config)
+    const send = await this.$axios.$post('/createws', payload, config)
       .then((res) => {
 
         if (res.status == 200) {

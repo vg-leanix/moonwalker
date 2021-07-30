@@ -16,6 +16,7 @@
     <div class="w-full h-full p-5">
       <form
         class="flex flex-col items-center"
+        v-on:submit.prevent=""
         v-on:submit="sendConfig"
         @input="capitalizeLetter"
       >
