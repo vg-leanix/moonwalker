@@ -5,7 +5,11 @@ export const state = () => ({
   wsToken: "",
   apiBusy: false,
   apiErrorCode: false,
-  apiError: ""
+  apiError: "",
+  apiSuccess: false,
+  apiSuccessMessage: "",
+  showSubmit: true
+
 
 
 
@@ -20,9 +24,23 @@ export const mutations = {
     body.classList.add("overflow-hidden")
   },
 
-  changeMtmToken(state, newToken) {
-    state.mtmToken = newToken
+  changeApiError(state, error) {
+    state.apiError = error
+    state.apiErrorCode = true
 
+  },
+  changeApiSuccess(state) {
+    state.apiSuccess = true
+    state.apiSuccessMessage = "Workspace sucessfully created. Enjoy!"
+    state.showSubmit = false
+  },
+
+  setApiReady(state) {
+    state.apiBusy = false
+  },
+
+  setApiBusy(state) {
+    state.apiBusy = true
   }
 
 }
@@ -33,70 +51,41 @@ export const actions = {
   },
 
   // API Calls //
-  async sendTask({ commit, rootState }) {
+  
+  async sendConfig({ commit }, payload) {
 
-    let onBoardingDeck = JSON.stringify({
-      "sections": this.state.userChoice,
-      "user": rootState.auth.user,
-      "user_id": rootState.auth.userID
-    })
+    let configJson = JSON.stringify(payload)
+
     var config = {
       headers: {
         'Content-Type': 'application/json',
       },
 
     };
-
-    const send = await this.$axios.$post('/v1/pptx/pptxjob', onBoardingDeck, config)
+    commit('setApiBusy')
+    const send = await this.$axios.$post('http://localhost/8000/createws', configJson, config)
       .then((res) => {
 
+        if (res.status == 200) {
 
-        if (res.status == "success") {
-          let alert = {
-            'alertType': 'Info',
-            'alertID': 'Job triggered successfully',
-            'alertColor': 'green'
-          }
-          commit('changeDownloadStatus');
-          commit('addTaskAlert', alert);
-
-        }
-        else if (res.status == "no_sections") {
-          let alert = {
-            'alertType': 'Sections',
-            'alertID': "Please select sections",
-            'alertColor': 'red'
-          }
-          commit('changeDownloadStatus');
-          commit('addTaskAlert', alert);
-        }
-        else if (res.status == "pptx_exists") {
-          let alert = {
-            'alertType': 'Powerpoint',
-            'alertID': "Looks the requested deck already exists under Downloads",
-            'alertColor': 'red'
-          }
-          commit('changeDownloadStatus');
-          commit('addTaskAlert', alert);
+          commit('changeApiSuccess');
+          commit('setApiReady')
         }
 
-
-
+        else if (res.status == 400) {
+          let stringErr = "400 error"
+          commit('changeApiError', stringErr);
+        }
       })
-      .catch((err) => {
+      .catch((res) => {
+
         let stringErr = String(err)
-        let alert = {
-          'alertType': 'API Error',
-          'alertID': stringErr.replace('Error: ', ''),
-          'alertColor': 'red'
-        }
-        commit('addTaskAlert', alert);
-        commit('changeDownloadStatus');
 
-      });
+        commit('changeApiError', stringErr);
+        commit('setApiReady')
+      })
 
-
-  },
+  }
 
 
 

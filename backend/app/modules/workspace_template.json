@@ -1,0 +1,1348 @@
+{
+    "allowTransientUsers": true,
+    "status": "ACTIVE",
+    "type": "LIVE",
+    "contract": {
+        "id": "5b2db257-5618-46fa-a946-1b85b5920177",
+        "featureBundleId": "ultimate-v2",
+        "startDate": "2020-01-03T00:00:00.000Z",
+        "type": "REGULAR",
+        "status": "ACTIVE",
+        "comment": "",
+        "account": {
+            "id": "5b055c1b-2ea2-45bb-9305-486d831de4b5",
+            "name": "leanix",
+            "fromAddress": "support@leanix.net",
+            "links": [
+                {
+                    "rel": "contracts",
+                    "href": "/accounts/5b055c1b-2ea2-45bb-9305-486d831de4b5/contracts"
+                }
+            ],
+            "responsibleUser": {
+                "id": "b07742aa-ca05-4e94-8959-8ab1cb3e5789",
+                "userName": "andre.christ@leanix.net",
+                "email": "andre.christ@leanix.net",
+                "firstName": "Andre",
+                "lastName": "Christ",
+                "role": "SUPERADMIN",
+                "status": "ACTIVE",
+                "technicalUser": false,
+                "scimManaged": false,
+                "transientUser": false,
+                "links": [
+                    {
+                        "rel": "permissions",
+                        "href": "/users/b07742aa-ca05-4e94-8959-8ab1cb3e5789/permissions"
+                    },
+                    {
+                        "rel": "settings",
+                        "href": "/users/b07742aa-ca05-4e94-8959-8ab1cb3e5789/settings"
+                    }
+                ],
+                "replayed": false,
+                "displayName": "Andre Christ",
+                "active": true
+            },
+            "passwordPolicy": "NORMAL"
+        },
+        "application": {
+            "name": "eam",
+            "type": "sp",
+            "roles": [
+                "ADMIN",
+                "MEMBER",
+                "VIEWER",
+                "CONTACT"
+            ]
+        },
+        "displayName": "leanix eam REGULAR 2020-01-03",
+        "links": [
+            {
+                "rel": "account",
+                "href": "/accounts/5b055c1b-2ea2-45bb-9305-486d831de4b5"
+            },
+            {
+                "rel": "application",
+                "href": "/applications/eam"
+            }
+        ],
+        "active": true
+    },
+    "instance": {
+        "id": "6871b910-c03e-48ea-bebf-d00ffaaa3ebf",
+        "name": "eam demo-eu [eu]",
+        "url": "https://demo-eu.leanix.net",
+        "identityManagement": null,
+        "isDefault": false,
+        "isPrimary": false,
+        "entityId": null,
+        "application": {
+            "name": "eam",
+            "type": "sp",
+            "roles": [
+                "ADMIN",
+                "MEMBER",
+                "VIEWER",
+                "CONTACT"
+            ]
+        },
+        "account": null,
+        "identityProvider": {
+            "id": "52ebcb67-c1e6-4a2e-bd5f-e211be346c1e",
+            "name": "idp",
+            "userNameDomain": null,
+            "account": null,
+            "identityManagement": "FULLY_MTM_BASED",
+            "entityId": "https://eu-svc.leanix.net/services/idp/shibboleth",
+            "metadata": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<EntityDescriptor xmlns=\"urn:oasis:names:tc:SAML:2.0:metadata\" xmlns:ds=\"http://www.w3.org/2000/09/xmldsig#\" xmlns:shibmd=\"urn:mace:shibboleth:metadata:1.0\"\n                  xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n                  entityID=\"https://eu-svc.leanix.net/services/idp/shibboleth\">\n\n    <IDPSSODescriptor protocolSupportEnumeration=\"urn:mace:shibboleth:1.0 urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:2.0:protocol\">\n\n        <Extensions>\n            <shibmd:Scope regexp=\"false\">leanix.net</shibmd:Scope>\n        </Extensions>\n\n        <KeyDescriptor>\n            <ds:KeyInfo>\n                <ds:X509Data>\n                    <ds:X509Certificate>\n                        MIIGZTCCBU2gAwIBAgIQKNVkW0hE6EVKAVcKEAYCojANBgkqhkiG9w0BAQsFADBG\n                        MQswCQYDVQQGEwJVUzEWMBQGA1UEChMNR2VvVHJ1c3QgSW5jLjEfMB0GA1UEAxMW\n                        R2VvVHJ1c3QgU0hBMjU2IFNTTCBDQTAeFw0xNjA2MzAwMDAwMDBaFw0xODA3MzAy\n                        MzU5NTlaMGcxCzAJBgNVBAYTAkRFMRwwGgYDVQQIDBNOb3JkcmhlaW4tV2VzdGZh\n                        bGVuMQ0wCwYDVQQHDARCb25uMRQwEgYDVQQKDAtMZWFuSVggR21iSDEVMBMGA1UE\n                        AwwMKi5sZWFuaXgubmV0MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA\n                        vkgN+jMlAoGxZU1zYl0dVruN+yTMC8MWEgnUpTeLHj8JfUy0PXvsAQsxKLpQcoE1\n                        FXW+V0gZ1maQeNQ39EtgaUNIKELk5rk9qTeOmktW90WYTy19b2qYj8udbR3IMaAm\n                        9/2ZUiKdK84g1xzEHrE7rr1VQ7WzpapqqL0Ur1MoDJgSsLgMEJ5hSpuuv5728uhl\n                        5O0EU0SKzORklE/NI2/q9sA6qrA6CCJH44k9y+3Ucd2o9gslBWhtjD/+jPKYJRj7\n                        2k14p+Bl8orEjquVZJhBLdtk2GSyiNovp9jtiFOUoZtXHMleHtsYIwIrFyWi3Hid\n                        6tjqTO6zFO1Qtml9PBihHwIDAQABo4IDLDCCAygwIwYDVR0RBBwwGoIMKi5sZWFu\n                        aXgubmV0ggpsZWFuaXgubmV0MAkGA1UdEwQCMAAwDgYDVR0PAQH/BAQDAgWgMCsG\n                        A1UdHwQkMCIwIKAeoByGGmh0dHA6Ly9nai5zeW1jYi5jb20vZ2ouY3JsMIGdBgNV\n                        HSAEgZUwgZIwgY8GBmeBDAECAjCBhDA/BggrBgEFBQcCARYzaHR0cHM6Ly93d3cu\n                        Z2VvdHJ1c3QuY29tL3Jlc291cmNlcy9yZXBvc2l0b3J5L2xlZ2FsMEEGCCsGAQUF\n                        BwICMDUMM2h0dHBzOi8vd3d3Lmdlb3RydXN0LmNvbS9yZXNvdXJjZXMvcmVwb3Np\n                        dG9yeS9sZWdhbDAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwHwYDVR0j\n                        BBgwFoAUFGeO7YNP1h6dQAQMBEahcDSyD3IwVwYIKwYBBQUHAQEESzBJMB8GCCsG\n                        AQUFBzABhhNodHRwOi8vZ2ouc3ltY2QuY29tMCYGCCsGAQUFBzAChhpodHRwOi8v\n                        Z2ouc3ltY2IuY29tL2dqLmNydDCCAX4GCisGAQQB1nkCBAIEggFuBIIBagFoAHYA\n                        3esdK3oNT6Ygi4GtgWhwfi6OnQHVXIiNPRHEzbbsvswAAAFVoCAHKAAABAMARzBF\n                        AiBpMSxvEkwJEJPTAbVhU6tw0mcpUfCvA2vdc1NrIZ/NPwIhAJwM5NyLp0DW/D7R\n                        PKeSOlrstEAiZOnUHx+xEbHDxjVAAHYApLkJkLQYWBSHuxOizGdwCjw1mAT5G9+4\n                        43fNDsgN3BAAAAFVoCAHSwAABAMARzBFAiA4161JSsynAMiyruICNLjCm3U0MCR3\n                        FHQmXvPSQUqqowIhALkVZznpJjkGNqTzBb7gAAMDW8rYWhLec5UpEvX1WUgDAHYA\n                        aPaY+B9kgr46jO65KB1M/HFRXWeT1ETRCmesu09P+8QAAAFVoCAHYwAABAMARzBF\n                        AiA3z+fqEwWbHJqj8kjgEOhl0CFBJ4XjTtA/rj6+7UjoYwIhALjAPyo3qU5HTb19\n                        10ZR5u/AkHtufwdPo6BTuMX6mXhyMA0GCSqGSIb3DQEBCwUAA4IBAQAl6WtvjBtp\n                        P6UqJZnmNTSIPrr92Gz2YjPEy5jldyG1YkB8zE1rITvz6O2Gk/beKdb49uyHbvzM\n                        3v1donNgo4sRoRhrREVbo7yrbpn/aNLACIOYdxapiZPHgPpNBuQVzBuA8N8F3wis\n                        qo5dpBBPsh1d1KBj49JC8d+SqSTcPz0+qjqhe7u2Oc4JOhRBOSXZS6i+f/NctS9a\n                        NVXhYCANfJI2Dnpl2L0Mpnt0Sf/tfgn+6jpxzwHQWbcRtdKjDNLPRVWkHFJqoDl5\n                        8zrKTTZOI6cPDCk3UblIXgAd69I6I9N8zEVAyhGTzdprIs+TNMayNgQGXw4Atjxw\n                        g1fpz28NmyTf\n                    </ds:X509Certificate>\n                </ds:X509Data>\n            </ds:KeyInfo>\n        </KeyDescriptor>\n\n        <SingleLogoutService Binding=\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect\" Location=\"https://eu-svc.leanix.net/services/idp/profile/SAML2/Redirect/SLO\" />\n        <SingleLogoutService Binding=\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST\" Location=\"https://eu-svc.leanix.net/services/idp/profile/SAML2/POST/SLO\" />\n\n        <NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat>\n        <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>\n\n        <SingleSignOnService Binding=\"urn:mace:shibboleth:1.0:profiles:AuthnRequest\" Location=\"https://eu-svc.leanix.net/services/idp/profile/Shibboleth/SSO\"/>\n        <SingleSignOnService Binding=\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST\" Location=\"https://eu-svc.leanix.net/services/idp/profile/SAML2/POST/SSO\"/>\n        <SingleSignOnService Binding=\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign\" Location=\"https://eu-svc.leanix.net/services/idp/profile/SAML2/POST-SimpleSign/SSO\"/>\n        <SingleSignOnService Binding=\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect\" Location=\"https://eu-svc.leanix.net/services/idp/profile/SAML2/Redirect/SSO\"/>\n    </IDPSSODescriptor>\n\n</EntityDescriptor>",
+            "certificateExpiryDate": null
+        },
+        "links": [
+            {
+                "rel": "application",
+                "href": "/applications/eam"
+            },
+            {
+                "rel": "identityProvider",
+                "href": "/identityProviders/52ebcb67-c1e6-4a2e-bd5f-e211be346c1e"
+            }
+        ],
+        "thirdParty": false
+    },
+    "name": "VIGDOCKER",
+    "featureBundle": {
+        "id": "eas-apm",
+        "name": "EAS | APM module",
+        "summary": null,
+        "base": "common-v3",
+        "type": "EDITION",
+        "legacy": false,
+        "version": null,
+        "features": [
+            {
+                "id": "acl",
+                "type": "QUOTA",
+                "description": "ACL based access control, determines maximum number of virtual workspaces for a customer",
+                "status": "DISABLED",
+                "group": "PRODUCTIVE",
+                "quota": 10,
+                "customized": false
+            },
+            {
+                "id": "addon.indicators",
+                "type": "FUNCTIONAL",
+                "description": "If enabled, allows to specify indicators based on workspace data.",
+                "status": "DISABLED",
+                "group": "BETA",
+                "customized": false
+            },
+            {
+                "id": "addon.metrics",
+                "type": "QUOTA",
+                "description": "Adds a number of metrics charts to the workspace, -1 = unlimited.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "quota": -1,
+                "customized": false
+            },
+            {
+                "id": "addon.surveys",
+                "type": "FUNCTIONAL",
+                "description": "Allows to design and run surveys.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "addon.surveys.powerfeatures",
+                "type": "FUNCTIONAL",
+                "description": "Adds more complex fields to survey and enables more options.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "admin.apitokens",
+                "type": "FUNCTIONAL",
+                "description": "Allows to create and manage secure API tokens for the workspace in the administration area.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "admin.customerroles.showinworkspace",
+                "type": "FUNCTIONAL",
+                "description": "Allow admins to verify customer_roles in the administration of users in the workspace",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "admin.derived-data-opt-in",
+                "type": "FUNCTIONAL",
+                "description": "Allows to opt in to derived data usage for the account in the administration area.",
+                "status": "ENABLED",
+                "group": "BETA",
+                "customized": false
+            },
+            {
+                "id": "admin.design",
+                "type": "FUNCTIONAL",
+                "description": "Allows to configure visual design of the workspace in the administration area.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "admin.exports",
+                "type": "FUNCTIONAL",
+                "description": "Allows advance exporting of the workspace in the administration area. Additionally allows to monitor existing exports of the workspace.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "admin.factsheets",
+                "type": "FUNCTIONAL",
+                "description": "Allows to edit settings of a Fact Sheet type for the workspace in the administration area.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "admin.integrationapi",
+                "type": "FUNCTIONAL",
+                "description": "Allows to build custom integrations for the workspace in the administration area.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "admin.integrations",
+                "type": "FUNCTIONAL",
+                "description": "Allows to build integration ecosystem for the workspace in the administration area.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "admin.metrics",
+                "type": "FUNCTIONAL",
+                "description": "Allows to toggle the visibility of the metrics configuration in the administration area.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "admin.notifications",
+                "type": "FUNCTIONAL",
+                "description": "Allows to configure workspace notifications in the administration area.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "admin.portal",
+                "type": "FUNCTIONAL",
+                "description": "Allows to toggle the visibility of the portal configurations in the administration area.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "admin.reports",
+                "type": "FUNCTIONAL",
+                "description": "Allows to install and manage reports for the workspace in the administration area.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "admin.settings",
+                "type": "FUNCTIONAL",
+                "description": "Allows to configure settings of the workspace in the administration area.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "admin.subscription",
+                "type": "FUNCTIONAL",
+                "description": "Allows to toggle the visibility of the subscription roles configuration in the administration area.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "admin.synclog",
+                "type": "FUNCTIONAL",
+                "description": "Allows to visualize integrations logs of the workspace in the administration area.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "admin.technicalusers",
+                "type": "FUNCTIONAL",
+                "description": "Allow operations on technical users in the administration area.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "admin.tools",
+                "type": "FUNCTIONAL",
+                "description": "Allows to use developer tools in the administration area.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "admin.webhooks",
+                "type": "FUNCTIONAL",
+                "description": "Allows to exhange data with other systems for the workspace in the administration area.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "admin.workflows",
+                "type": "FUNCTIONAL",
+                "description": "Allows to configure workflows from the workflow service in the administration area.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "applicationportal.search",
+                "type": "FUNCTIONAL",
+                "description": "Adds a search mechanism based on a machine learning allowing to do a semantic search for 'similar' Applications for the Self Service Portal.",
+                "status": "ENABLED",
+                "group": "BETA",
+                "customized": false
+            },
+            {
+                "id": "bookmarks.collections",
+                "type": "FUNCTIONAL",
+                "description": "Enables grouping of bookmarks into collections.",
+                "status": "DISABLED",
+                "group": "BETA",
+                "customized": false
+            },
+            {
+                "id": "bookmarks.sharing",
+                "type": "QUOTA",
+                "description": "Defines a maximum amount of users a bookmark can be shared with.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "quota": 100,
+                "customized": false
+            },
+            {
+                "id": "business-transformation-management.impacts",
+                "type": "FUNCTIONAL",
+                "description": "Enables new BTM module.",
+                "status": "DISABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "business-transformation-management.impacts.createfs",
+                "type": "FUNCTIONAL",
+                "description": "Allows \"Create new Fact Sheet\" impacts to be defined.",
+                "status": "DISABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "business-transformation-management.impacts.impactGroupMilestone",
+                "type": "FUNCTIONAL",
+                "description": "Enables a completion date field on impact groups that is used as the timestamp in impacts executions and for the projection of the impacts in that impact group",
+                "status": "DISABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "collaboration.notifications",
+                "type": "FUNCTIONAL",
+                "description": "Enables to send notification as E-Mail, disabling shuts down email for the workspace.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "configuration.selfservice",
+                "type": "FUNCTIONAL",
+                "description": "Enables admins to change the configuration of the meta model of a workspace, e.g. adding, removing fields, change translations, change order of objects or change basic configuration of FS types.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "configuration.selfservice.beta",
+                "type": "FUNCTIONAL",
+                "description": "Preview-features to enable admins to change the configuration of the meta model of a workspace, e.g. adding, removing fields, change translations, change order of objects or change basic configuration of FS types.",
+                "status": "DISABLED",
+                "group": "BETA",
+                "customized": false
+            },
+            {
+                "id": "connector.xlsx",
+                "type": "FUNCTIONAL",
+                "description": "Enables LeanIX Excel connector, convert Excel files to LeanIX Data Interchange Format (LDIF)",
+                "status": "DISABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "customizing.dataPrivacy",
+                "type": "FUNCTIONAL",
+                "description": "Allows to toggle the visibility of the menu entry for data privacy",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "customizing.design",
+                "type": "FUNCTIONAL",
+                "description": "Allows to upload logos and change colors of the workspace.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "customizing.design.poweredbylogo",
+                "type": "FUNCTIONAL",
+                "description": "Shows powered by LeanIX in the Dashboard sidebar, if a custom logo has been uploaded for the menu.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "customizing.javascript",
+                "type": "FUNCTIONAL",
+                "description": "Allows to add custom JavaScript snippets which are executed when application is loaded.",
+                "status": "DISABLED",
+                "group": "EXCEPTION",
+                "customized": false
+            },
+            {
+                "id": "customizing.model",
+                "type": "FUNCTIONAL",
+                "description": "Shows the model editor in the administration area to support customizing.",
+                "status": "DISABLED",
+                "group": "EXCEPTION",
+                "customized": false
+            },
+            {
+                "id": "diagrams.dataflow",
+                "type": "FUNCTIONAL",
+                "description": "Enables Data Flow in Diagrams",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "diagrams.export.drawio",
+                "type": "FUNCTIONAL",
+                "description": "Enables draw.io XML export for Visualizer diagrams",
+                "status": "DISABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "diagrams.filters",
+                "type": "FUNCTIONAL",
+                "description": "Enables filter functionality in Diagrams",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "diagrams.lucidchart",
+                "type": "FUNCTIONAL",
+                "description": "Enables Lucidchart integration",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "diagrams.shapes.archimate3",
+                "type": "FUNCTIONAL",
+                "description": "Enables the use of ArchiMate3 shapes in diagrams",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "diagrams.shapes.aws",
+                "type": "FUNCTIONAL",
+                "description": "Enables the use of AWS shapes in diagrams",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "diagrams.shapes.azure",
+                "type": "FUNCTIONAL",
+                "description": "Enables the use of Azure shapes in diagrams",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "diagrams.shapes.gcp",
+                "type": "FUNCTIONAL",
+                "description": "Enables the use of GCP shapes in diagrams",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "diagrams.shapes.k8s",
+                "type": "FUNCTIONAL",
+                "description": "Enables the use of Kubernetes shapes in diagrams",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "export.service.v2",
+                "type": "FUNCTIONAL",
+                "description": "Enables the use of the export service based on headless Chrome",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "factsheet.cloning",
+                "type": "FUNCTIONAL",
+                "description": "Allows to clone Fact Sheets.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "factsheet.create.proposal",
+                "type": "FUNCTIONAL",
+                "description": "Allows a user to create Fact Sheets with proposal names.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "factsheet.hierarchies",
+                "type": "QUOTA",
+                "description": "Defines the maximum level of Fact Sheet hierarchies.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "quota": 5,
+                "customized": false
+            },
+            {
+                "id": "factsheet.history.anonymize",
+                "type": "FUNCTIONAL",
+                "description": "Allows to remove the user from events that are older then the specified time in workspace settings.",
+                "status": "DISABLED",
+                "group": "EXCEPTION",
+                "customized": false
+            },
+            {
+                "id": "factsheet.quota",
+                "type": "QUOTA",
+                "description": "Defines the maximum number of Fact Sheets in this workspace.",
+                "status": "ENABLED",
+                "group": "LEGACY",
+                "quota": -1,
+                "customized": false
+            },
+            {
+                "id": "factsheet.quota.applications",
+                "type": "QUOTA",
+                "description": "Limits the amount of applications a workspace can hold.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "quota": 0,
+                "customized": false
+            },
+            {
+                "id": "factsheet.relation.lifecycle",
+                "type": "FUNCTIONAL",
+                "description": "Enables management of lifecycles (activeFrom, activeTo) at Fact Sheet relations.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "factsheet.relation.lifecycle.bosch",
+                "type": "FUNCTIONAL",
+                "description": "Only shows activeFrom/activeTo at Fact Sheet relations of the type applicationUserGroupRelation and applicationBusinessCapabilityRelation.",
+                "status": "DISABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "factsheet.subscription",
+                "type": "FUNCTIONAL",
+                "description": "Allows to subscribe users to Fact Sheets.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "factsheet.type.iface.ignorequota",
+                "type": "FUNCTIONAL",
+                "description": "Ignores to count Interfaces into the Fact Sheet quota.",
+                "status": "DISABLED",
+                "group": "EXCEPTION",
+                "customized": false
+            },
+            {
+                "id": "factsheet.upload.images",
+                "type": "FUNCTIONAL",
+                "description": "Allows to upload images as a document at the Fact Sheet.",
+                "status": "DISABLED",
+                "group": "EXCEPTION",
+                "customized": false
+            },
+            {
+                "id": "integration.apptio.showInList",
+                "type": "FUNCTIONAL",
+                "description": "Make this integration visible in main panel of Integrations.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "integration.apptio.v2",
+                "type": "FUNCTIONAL",
+                "description": "Enables Apptio Integration V2 (leanix-apptio-connector)",
+                "status": "DISABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "integration.confluence",
+                "type": "FUNCTIONAL",
+                "description": "Enables Confluence Integration",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "integration.confluence.showInList",
+                "type": "FUNCTIONAL",
+                "description": "Make this integration visible in main panel of Integrations.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "integration.githubActions.showInList",
+                "type": "FUNCTIONAL",
+                "description": "Make this integration visible in main panel of Integrations.",
+                "status": "DISABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "integration.integrationapi",
+                "type": "FUNCTIONAL",
+                "description": "Enables the Integration API",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "integration.intercom",
+                "type": "FUNCTIONAL",
+                "description": "Enables Intercom integration, allows customers to configure own Intercom App ID in workspace.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "integration.intercom.showInList",
+                "type": "FUNCTIONAL",
+                "description": "Make this integration visible in main panel of Integrations.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "integration.jenkins.showInList",
+                "type": "FUNCTIONAL",
+                "description": "Make this integration visible in main panel of Integrations.",
+                "status": "DISABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "integration.jira.v2",
+                "type": "FUNCTIONAL",
+                "description": "Enables Jira Integration v2.0.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "integration.jira.v2.showInList",
+                "type": "FUNCTIONAL",
+                "description": "Make this integration visible in main panel of Integrations.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "integration.k8s.showInList",
+                "type": "FUNCTIONAL",
+                "description": "Make this integration visible in main panel of Integrations.",
+                "status": "DISABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "integration.ltls",
+                "type": "FUNCTIONAL",
+                "description": "Controls the availability of ltls-integration on leanix workspaces. LTLS integration works as an alternative to Technopedia integration.",
+                "status": "DISABLED",
+                "group": "BETA",
+                "customized": false
+            },
+            {
+                "id": "integration.ltls.bulkActions",
+                "type": "FUNCTIONAL",
+                "description": "Enables the LTLS Bulk Actions, linking multiple FactSheets to LTLS at once. ",
+                "status": "DISABLED",
+                "group": "BETA",
+                "customized": false
+            },
+            {
+                "id": "integration.lucidchart.showInList",
+                "type": "FUNCTIONAL",
+                "description": "Make this integration visible in main panel of Integrations.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "integration.mobile.showInList",
+                "type": "FUNCTIONAL",
+                "description": "Make this integration visible in main panel of Integrations.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "integration.pivio",
+                "type": "FUNCTIONAL",
+                "description": "Enables Pivio Integration.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "integration.pivio.showInList",
+                "type": "FUNCTIONAL",
+                "description": "Make this integration visible/hidden in main panel of Integrations.",
+                "status": "DISABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "integration.servicenow",
+                "type": "FUNCTIONAL",
+                "description": "Enables ServiceNow Integration.",
+                "status": "DISABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "integration.servicenow.json",
+                "type": "FUNCTIONAL",
+                "description": "Enables advanced tab on ServiceNow Integration.",
+                "status": "DISABLED",
+                "group": "EXCEPTION",
+                "customized": false
+            },
+            {
+                "id": "integration.servicenow.showInList",
+                "type": "FUNCTIONAL",
+                "description": "Make this integration visible in main panel of Integrations.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "integration.signavio.json",
+                "type": "FUNCTIONAL",
+                "description": "Enables advanced tab on Signavio Integration.",
+                "status": "DISABLED",
+                "group": "EXCEPTION",
+                "customized": false
+            },
+            {
+                "id": "integration.signavio.multiprocessmappings",
+                "type": "FUNCTIONAL",
+                "description": "Enable multiple Signavio process mappings.",
+                "status": "DISABLED",
+                "group": "EXCEPTION",
+                "customized": false
+            },
+            {
+                "id": "integration.signavio.showInList",
+                "type": "FUNCTIONAL",
+                "description": "Make this integration visible in main panel of Integrations.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "integration.signavio.v2",
+                "type": "FUNCTIONAL",
+                "description": "Enables Signavio Integration v2.0.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "integration.technopedia",
+                "type": "FUNCTIONAL",
+                "description": "Enables Technopedia Integration v1.0.",
+                "status": "DISABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "integration.technopedia.disablecheck",
+                "type": "FUNCTIONAL",
+                "description": "Disables Technopedia credential check during configuration.",
+                "status": "DISABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "integration.technopedia.showInList",
+                "type": "FUNCTIONAL",
+                "description": "Make this integration visible in main panel of Integrations.",
+                "status": "DISABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "inventory.ai.bcmapping",
+                "type": "FUNCTIONAL",
+                "description": "Enables the automatic recommendation of BusinessCapabilities based on descriptions of an Application.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "inventory.approvalworkflow",
+                "type": "FUNCTIONAL",
+                "description": "Allows to configure the approval workflow with mandatory fields in the fact sheet type settings",
+                "status": "ENABLED",
+                "group": "BETA",
+                "customized": false
+            },
+            {
+                "id": "inventory.importexport.odata",
+                "type": "FUNCTIONAL",
+                "description": "Enables ODATA functionality via the import-export service.",
+                "status": "DISABLED",
+                "group": "BETA",
+                "customized": false
+            },
+            {
+                "id": "inventory.importexport.xlsx",
+                "type": "FUNCTIONAL",
+                "description": "Enables XLSX functionality via the import-export service.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "inventory.qualitycheck",
+                "type": "FUNCTIONAL",
+                "description": "Enables the quality check indicator at Fact Sheet and reminder notifications.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "inventory.quicksearch.groupby",
+                "type": "FUNCTIONAL",
+                "description": "Enable inventory quick search grouping by Fact Sheet type",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "inventory.quicksearch.new",
+                "type": "FUNCTIONAL",
+                "description": "Enable the new inventory quick search",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "inventory.savedperuser",
+                "type": "QUOTA",
+                "description": "Saved bookmarks in inventory per user user workspace.",
+                "status": "DISABLED",
+                "group": "LEGACY",
+                "quota": 0,
+                "customized": false
+            },
+            {
+                "id": "inventory.search.new",
+                "type": "FUNCTIONAL",
+                "description": "New way of searching, with changed behavior of facets.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "inventory.table.edit",
+                "type": "FUNCTIONAL",
+                "description": "Allows to edit Fact Sheet table view.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "inventory.table.edit.relations",
+                "type": "FUNCTIONAL",
+                "description": "Enables the editing of relations and relation attributes in Inventory table view.",
+                "status": "DISABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "language.de",
+                "type": "FUNCTIONAL",
+                "description": "Enables language German.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "language.en",
+                "type": "FUNCTIONAL",
+                "description": "Enables language English.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "language.es",
+                "type": "FUNCTIONAL",
+                "description": "Enables language Spanish.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "language.fr",
+                "type": "FUNCTIONAL",
+                "description": "Enables language French.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "language.pt",
+                "type": "FUNCTIONAL",
+                "description": "Enables language Portuguese.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "language.selection",
+                "type": "FUNCTIONAL",
+                "description": "Enables to select language in the user profile and in the workspace settings.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "license.contacts",
+                "type": "QUOTA",
+                "description": "Defines the maximum number of contacts per workspace, -1 = unlimited.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "quota": -1,
+                "customized": false
+            },
+            {
+                "id": "license.user",
+                "type": "QUOTA",
+                "description": "Defines the maximum number of users (incl. admins) per workspace, -1 = unlimited.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "quota": -1,
+                "customized": false
+            },
+            {
+                "id": "license.viewer",
+                "type": "QUOTA",
+                "description": "Defines the maximum number of viewers per workspace, -1 = unlimited.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "quota": -1,
+                "customized": false
+            },
+            {
+                "id": "module.cloudnativesuite.cloudintelligence",
+                "type": "FUNCTIONAL",
+                "description": "If true, this workspace runs in an optimized mode for cloud native suite data processing.",
+                "status": "DISABLED",
+                "group": "BETA",
+                "customized": false
+            },
+            {
+                "id": "module.cloudnativesuite.cloudintelligence.cloudspent",
+                "type": "QUOTA",
+                "description": "With this quota you can limit how much cloud spent is managed in the workspace, -1 = unlimited",
+                "status": "DISABLED",
+                "group": "PRODUCTIVE",
+                "quota": 0,
+                "customized": false
+            },
+            {
+                "id": "news",
+                "type": "FUNCTIONAL",
+                "description": "Enables the home screen and the collaboration features, e.g. comments at Fact Sheets.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "news.dashboard.applicationportfoliomanagement",
+                "type": "FUNCTIONAL",
+                "description": "Enables the APM dashboard.",
+                "status": "DISABLED",
+                "group": "BETA",
+                "customized": false
+            },
+            {
+                "id": "news.dashboard.applicationportfoliomanagement.calc",
+                "type": "FUNCTIONAL",
+                "description": "Enables the calculation of indicators on the APM dashboard.",
+                "status": "ENABLED",
+                "group": "BETA",
+                "customized": false
+            },
+            {
+                "id": "news.dashboard.applicationrationalization",
+                "type": "FUNCTIONAL",
+                "description": "Enables the APM dashboard for Application Rationalization.",
+                "status": "DISABLED",
+                "group": "BETA",
+                "customized": false
+            },
+            {
+                "id": "news.dashboard.panel.iframe",
+                "type": "FUNCTIONAL",
+                "description": "Enables a dashboard panel to include an iframe with external content to the dashboards.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "news.dashboard.panel.metrics",
+                "type": "FUNCTIONAL",
+                "description": "Allows to include metrics panels in the dashboard",
+                "status": "ENABLED",
+                "group": "BETA",
+                "customized": false
+            },
+            {
+                "id": "news.dashboard.smartindicators",
+                "type": "FUNCTIONAL",
+                "description": "Enables the calculation of smart indicators within a workspace and to compare them across workspaces.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "news.dashboard.technologyriskmanagement",
+                "type": "FUNCTIONAL",
+                "description": "Enables the TRM dashboard for Management of technical debt.",
+                "status": "DISABLED",
+                "group": "BETA",
+                "customized": false
+            },
+            {
+                "id": "news.dashboard.technologyriskmanagement.calc",
+                "type": "FUNCTIONAL",
+                "description": "Enables the calculation of indicators on the TRM dashboard.",
+                "status": "DISABLED",
+                "group": "BETA",
+                "customized": false
+            },
+            {
+                "id": "news.dashboard.todo.recommendation",
+                "type": "FUNCTIONAL",
+                "description": "Enables the to-do items that are created by a recommendation engine, e.g. inactive users.",
+                "status": "DISABLED",
+                "group": "LEGACY",
+                "customized": false
+            },
+            {
+                "id": "news.dashboard.todo.workflow",
+                "type": "FUNCTIONAL",
+                "description": "Enables the to-do items that are workflow based, e.g. reminder at Fact Sheet, Open Comment or Survey.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "pathfinder.migrated",
+                "type": "FUNCTIONAL",
+                "description": "Enables the display of legacy events which have been migrated from pre 4.0 version.",
+                "status": "DISABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "pathfinder.productive",
+                "type": "FUNCTIONAL",
+                "description": "Sets the workspace in pathfinder active and enables notifications active from Pathfinder.",
+                "status": "DISABLED",
+                "group": "LEGACY",
+                "customized": false
+            },
+            {
+                "id": "portal",
+                "type": "FUNCTIONAL",
+                "description": "Enables configuration of Self-Service Portal.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "portal.advanced",
+                "type": "FUNCTIONAL",
+                "description": "Enables advanced configuration of Self-Service Portal (JSON based).",
+                "status": "DISABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "reporting.architectureroadmap",
+                "type": "FUNCTIONAL",
+                "description": "If enabled, the architecture roadmap is available in report creation.",
+                "status": "DISABLED",
+                "group": "BETA",
+                "customized": false
+            },
+            {
+                "id": "reporting.editpane",
+                "type": "FUNCTIONAL",
+                "description": "Enables the use of edit pane in reporting.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "reporting.reportcreation",
+                "type": "FUNCTIONAL",
+                "description": "Enables the use of report creation for admins.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "reporting.savedperuser",
+                "type": "QUOTA",
+                "description": "Defines the maximum number of saved reports per user, -1 = unlimited.",
+                "status": "DISABLED",
+                "group": "LEGACY",
+                "quota": 0,
+                "customized": false
+            },
+            {
+                "id": "reporting.smartxplore",
+                "type": "FUNCTIONAL",
+                "description": "Enables improved report navigation.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "reporting.view.techrisk",
+                "type": "FUNCTIONAL",
+                "description": "Enables the Technology Risk view in reports for Application Fact Sheets.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "reporting.visualizer.dataflow.interfaceaggregation",
+                "type": "FUNCTIONAL",
+                "description": "Allow users to toggle aggregation of interfaces",
+                "status": "DISABLED",
+                "group": "BETA",
+                "customized": false
+            },
+            {
+                "id": "reporting.visualizer.styles",
+                "type": "FUNCTIONAL",
+                "description": "Allow users to configure visualizer shape for Fact Sheets",
+                "status": "DISABLED",
+                "group": "BETA",
+                "customized": false
+            },
+            {
+                "id": "store",
+                "type": "FUNCTIONAL",
+                "description": "Enables integration with the LeanIX Store",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "support.help.level",
+                "type": "QUOTA",
+                "description": "Support levels for phone support: 0 - Comfort Support, 1 - Premium Support, 2 - Platinum Support",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "quota": 0,
+                "customized": false
+            },
+            {
+                "id": "support.help.skilljar",
+                "type": "FUNCTIONAL",
+                "description": "Allows navigation to a Skilljar-based training for regular LeanIX users.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "support.help.tours",
+                "type": "FUNCTIONAL",
+                "description": "Enables help tours in a workspace.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "support.intercom",
+                "type": "FUNCTIONAL",
+                "description": "Enables intercom as default support chat, instead of support tab via email.",
+                "status": "DISABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "taggroups.mandatory",
+                "type": "FUNCTIONAL",
+                "description": "Enables to set tag groups as mandatory.",
+                "status": "DISABLED",
+                "group": "EXCEPTION",
+                "customized": false
+            },
+            {
+                "id": "todos",
+                "type": "FUNCTIONAL",
+                "description": "Allows to create and manage todos.",
+                "status": "DISABLED",
+                "group": "BETA",
+                "customized": false
+            },
+            {
+                "id": "usability.pendo",
+                "type": "FUNCTIONAL",
+                "description": "Enables user behaviour tracking powered by Pendo.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "user.apitoken",
+                "type": "FUNCTIONAL",
+                "description": "Allow users to create api token",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "user.avatars",
+                "type": "FUNCTIONAL",
+                "description": "Allow users to upload a profile picture",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "user.invite",
+                "type": "FUNCTIONAL",
+                "description": "Enables users to invite other users to their workspace via email.",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "user.technicalusers",
+                "type": "FUNCTIONAL",
+                "description": "Allow operations on technical users",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "workflows.kpi.applicationrationalization",
+                "type": "FUNCTIONAL",
+                "description": "Triggers nightly execution of integration API processors for the KPIs that are shown on Application Rationalization dashboard",
+                "status": "ENABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "workflows.kpi.technologyrisk",
+                "type": "FUNCTIONAL",
+                "description": "Triggers nightly execution of integration API processors for the KPIs that are shown on Technology Risk Management dashboard",
+                "status": "DISABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "workflows.start",
+                "type": "FUNCTIONAL",
+                "description": "Allow operations on workflows from the workflow service",
+                "status": "DISABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "workflows.view",
+                "type": "FUNCTIONAL",
+                "description": "Allow viewing of workspace-specific workflows from the workflow service",
+                "status": "DISABLED",
+                "group": "PRODUCTIVE",
+                "customized": false
+            },
+            {
+                "id": "workspace.notifications",
+                "type": "FUNCTIONAL",
+                "description": "Disables the notifications for a given workspace",
+                "status": "ENABLED",
+                "group": "EXCEPTION",
+                "customized": false
+            },
+            {
+                "id": "workspace.webhooks.disableevents",
+                "type": "FUNCTIONAL",
+                "description": "Disables the sending of events to webhooks for a given workspace",
+                "status": "DISABLED",
+                "group": "EXCEPTION",
+                "customized": false
+            }
+        ],
+        "description": null
+    },
+    "featureBundleId": "eas-apm"
+}

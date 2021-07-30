@@ -6,7 +6,7 @@ tags_metadata = [
     
     {
         "name": "auth",
-        "description": "authentication workflow endpoint"
+        "description": "workflow creation workflow endpoint"
     },
 
 ]
