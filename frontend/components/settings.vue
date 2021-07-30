@@ -2,7 +2,7 @@
   <div
     class="
       w-full
-      flex
+      flex-row
       justify-center
       h-full
       min-h-screen
@@ -13,6 +13,60 @@
       overflow-hidden
     "
   >
+    <div data-theme="vg" class="flex w-full h-full p-5">
+      <ul class="steps w-full">
+        <li
+          :class="stepOne"
+          class="step"
+          v-if="!this.$store.state.firstStepError"
+          
+        >
+          Create Workspace
+        </li>
+        <li
+          v-if="this.$store.state.firstStepError"
+          :class="{'step-error':this.$store.state.firstStepError}"
+          class="step"
+          data-content="✕"
+          
+        >
+          Create Workspace
+        </li>
+        
+        <li
+          :class="stepTwo"
+          class="step"
+          v-if="!this.$store.state.secondStepError"
+        >
+          Provision Data Model
+        </li>
+        <li
+          v-if="this.$store.state.secondStepError"
+          :class="{'step-error':this.$store.state.secondStepError}"
+          class="step"
+          data-content="✕"
+          
+        >
+          Provision Data Model
+        </li>
+        <li
+          :class="stepThree"
+          class="step"
+          v-if="!this.$store.state.thirdStepError"
+        >
+          Upload Processors
+        </li>
+        <li
+          v-if="this.$store.state.thirdStepError"
+          :class="{'step-error':this.$store.state.thirdStepError}"
+          class="step"
+          data-content="✕"
+          
+        >
+          Upload Processors
+        </li>
+      </ul>
+    </div>
     <div class="w-full h-full p-5">
       <form
         class="flex flex-col items-center"
@@ -30,8 +84,9 @@
 
             <select
               name="instance"
+              required
               id="instance"
-              v-model="config.instance"
+              v-model="workspace.instance"
               class="
                 focus:ring-indigo-500
                 focus:border-indigo-500
@@ -59,8 +114,9 @@
 
             <select
               name="wsEdition"
-              v-model="config.edition"
-              id="mtmToken"
+              v-model="workspace.edition"
+              id="wsEdition"
+              required
               class="
                 focus:ring-indigo-500
                 focus:border-indigo-500
@@ -80,14 +136,15 @@
             </select>
           </div>
           <div class="mt-6 relative rounded-md shadow-sm">
-            <label for="wsName" class="block text-sm font-medium text-gray-700"
+            <label for="workspaceName" class="block text-sm font-medium text-gray-700"
               >Choose a workspace name:</label
             >
 
             <input
-              name="wsName"
-              v-model="config.wsName"
-              id="wsName"
+              name="workspaceName"
+              v-model="workspace.workspaceName"
+              id="workspaceName"
+              required
               class="
                 focus:ring-indigo-500
                 focus:border-indigo-500
@@ -115,7 +172,8 @@
               type="password"
               name="apiToken"
               id="apiToken"
-              v-model="config.apiToken"
+              required
+              v-model="workspace.apiToken"
               class="
                 focus:ring-indigo-500
                 focus:border-indigo-500
@@ -141,16 +199,7 @@
             class="flex flex-wrap w-full bg-gray-100 rounded-md opacity-80 p-3"
           >
             <p class="text-black text-xs font-light">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
+              {{this.$store.state.apiError}}
             </p>
           </div>
         </div>
@@ -212,12 +261,14 @@ export default {
   name: "settings",
   data() {
     return {
-      config: {
-        edition: "",
+      workspace: {
         instance: "",
         apiToken: "DJHVwgKQS4sswPZPrUtLbamVHD6xFueGcjwpQkO3",
-        wsName: "",
+        workspaceName:"",
       },
+      config:{
+        // CONTINUE HERE
+      }
     };
   },
   methods: {
@@ -225,18 +276,34 @@ export default {
       this.$store.dispatch("sendConfig", this.config);
     },
     capitalizeLetter() {
-      
-
-      if (this.config.wsName) {
-        this.config.wsName = this.config.wsName.replace("[^A-Za-z]/g", "").replace(" ","").replace("/\d/g","")
-        this.config.wsName = this.config.wsName.toUpperCase();
-        
-        
+      if (this.config.workspaceName) {
+        this.config.workspaceName = this.config.workspaceName
+          .replace("[^A-Za-z]/g", "")
+          .replace(" ", "")
+          .replace("/d/g", "");
+        this.config.workspaceName = this.config.workspaceName.toUpperCase();
       }
     },
   },
-  mounted() {
-    
+  computed: {
+    stepOne: function () {
+      return {
+        "step-primary": this.$store.state.firstStep,
+        
+      };
+    },
+    stepTwo: function () {
+      return {
+        "step-primary": this.$store.state.secondStep,
+        
+      };
+    },
+    stepThree: function () {
+      return {
+        "step-primary": this.$store.state.thirdStep
+        
+      };
+    },
   },
 };
 </script>

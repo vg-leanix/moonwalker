@@ -3,7 +3,10 @@ export default {
   head: {
     title: 'moonshot',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'en',
+     
+
+
     },
     meta: [
       { charset: 'utf-8' },

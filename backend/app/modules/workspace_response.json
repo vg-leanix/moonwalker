@@ -1,0 +1,148 @@
+{
+    "status": "OK",
+    "type": "Workspace",
+    "errors": [],
+    "total": 0,
+    "data": {
+        "id": "5783b9ad-f377-4529-8785-3271026687c4",
+        "contract": {
+            "id": "5b2db257-5618-46fa-a946-1b85b5920177",
+            "featureBundleId": "ultimate-v2",
+            "startDate": "2020-01-03T00:00:00.000Z",
+            "type": "REGULAR",
+            "status": "ACTIVE",
+            "comment": "",
+            "account": {
+                "id": "5b055c1b-2ea2-45bb-9305-486d831de4b5",
+                "name": "leanix",
+                "fromAddress": "support@leanix.net",
+                "links": [
+                    {
+                        "rel": "contracts",
+                        "href": "/accounts/5b055c1b-2ea2-45bb-9305-486d831de4b5/contracts"
+                    }
+                ],
+                "responsibleUser": {
+                    "id": "b07742aa-ca05-4e94-8959-8ab1cb3e5789",
+                    "userName": "andre.christ@leanix.net",
+                    "email": "andre.christ@leanix.net",
+                    "firstName": "Andre",
+                    "lastName": "Christ",
+                    "role": "SUPERADMIN",
+                    "status": "ACTIVE",
+                    "technicalUser": false,
+                    "scimManaged": false,
+                    "transientUser": false,
+                    "links": [
+                        {
+                            "rel": "permissions",
+                            "href": "/users/b07742aa-ca05-4e94-8959-8ab1cb3e5789/permissions"
+                        },
+                        {
+                            "rel": "settings",
+                            "href": "/users/b07742aa-ca05-4e94-8959-8ab1cb3e5789/settings"
+                        }
+                    ],
+                    "replayed": false,
+                    "displayName": "Andre Christ",
+                    "active": true
+                },
+                "passwordPolicy": "NORMAL"
+            },
+            "application": {
+                "name": "eam",
+                "type": "sp",
+                "roles": [
+                    "ADMIN",
+                    "MEMBER",
+                    "VIEWER",
+                    "CONTACT"
+                ]
+            },
+            "displayName": "leanix eam REGULAR 2020-01-03",
+            "links": [
+                {
+                    "rel": "account",
+                    "href": "/accounts/5b055c1b-2ea2-45bb-9305-486d831de4b5"
+                },
+                {
+                    "rel": "application",
+                    "href": "/applications/eam"
+                }
+            ],
+            "active": true
+        },
+        "instance": {
+            "id": "6871b910-c03e-48ea-bebf-d00ffaaa3ebf",
+            "name": "eam demo-eu [eu]",
+            "url": "https://demo-eu.leanix.net",
+            "identityManagement": null,
+            "isDefault": false,
+            "isPrimary": false,
+            "entityId": null,
+            "application": {
+                "name": "eam",
+                "type": "sp",
+                "roles": [
+                    "ADMIN",
+                    "MEMBER",
+                    "VIEWER",
+                    "CONTACT"
+                ]
+            },
+            "account": null,
+            "identityProvider": {
+                "id": "52ebcb67-c1e6-4a2e-bd5f-e211be346c1e",
+                "name": "idp",
+                "userNameDomain": null,
+                "account": null,
+                "identityManagement": "FULLY_MTM_BASED",
+                "entityId": "https://eu-svc.leanix.net/services/idp/shibboleth",
+                "metadata": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<EntityDescriptor xmlns=\"urn:oasis:names:tc:SAML:2.0:metadata\" xmlns:ds=\"http://www.w3.org/2000/09/xmldsig#\" xmlns:shibmd=\"urn:mace:shibboleth:metadata:1.0\"\n                  xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n                  entityID=\"https://eu-svc.leanix.net/services/idp/shibboleth\">\n\n    <IDPSSODescriptor protocolSupportEnumeration=\"urn:mace:shibboleth:1.0 urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:2.0:protocol\">\n\n        <Extensions>\n            <shibmd:Scope regexp=\"false\">leanix.net</shibmd:Scope>\n        </Extensions>\n\n        <KeyDescriptor>\n            <ds:KeyInfo>\n                <ds:X509Data>\n                    <ds:X509Certificate>\n                        MIIGZTCCBU2gAwIBAgIQKNVkW0hE6EVKAVcKEAYCojANBgkqhkiG9w0BAQsFADBG\n                        MQswCQYDVQQGEwJVUzEWMBQGA1UEChMNR2VvVHJ1c3QgSW5jLjEfMB0GA1UEAxMW\n                        R2VvVHJ1c3QgU0hBMjU2IFNTTCBDQTAeFw0xNjA2MzAwMDAwMDBaFw0xODA3MzAy\n                        MzU5NTlaMGcxCzAJBgNVBAYTAkRFMRwwGgYDVQQIDBNOb3JkcmhlaW4tV2VzdGZh\n                        bGVuMQ0wCwYDVQQHDARCb25uMRQwEgYDVQQKDAtMZWFuSVggR21iSDEVMBMGA1UE\n                        AwwMKi5sZWFuaXgubmV0MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA\n                        vkgN+jMlAoGxZU1zYl0dVruN+yTMC8MWEgnUpTeLHj8JfUy0PXvsAQsxKLpQcoE1\n                        FXW+V0gZ1maQeNQ39EtgaUNIKELk5rk9qTeOmktW90WYTy19b2qYj8udbR3IMaAm\n                        9/2ZUiKdK84g1xzEHrE7rr1VQ7WzpapqqL0Ur1MoDJgSsLgMEJ5hSpuuv5728uhl\n                        5O0EU0SKzORklE/NI2/q9sA6qrA6CCJH44k9y+3Ucd2o9gslBWhtjD/+jPKYJRj7\n                        2k14p+Bl8orEjquVZJhBLdtk2GSyiNovp9jtiFOUoZtXHMleHtsYIwIrFyWi3Hid\n                        6tjqTO6zFO1Qtml9PBihHwIDAQABo4IDLDCCAygwIwYDVR0RBBwwGoIMKi5sZWFu\n                        aXgubmV0ggpsZWFuaXgubmV0MAkGA1UdEwQCMAAwDgYDVR0PAQH/BAQDAgWgMCsG\n                        A1UdHwQkMCIwIKAeoByGGmh0dHA6Ly9nai5zeW1jYi5jb20vZ2ouY3JsMIGdBgNV\n                        HSAEgZUwgZIwgY8GBmeBDAECAjCBhDA/BggrBgEFBQcCARYzaHR0cHM6Ly93d3cu\n                        Z2VvdHJ1c3QuY29tL3Jlc291cmNlcy9yZXBvc2l0b3J5L2xlZ2FsMEEGCCsGAQUF\n                        BwICMDUMM2h0dHBzOi8vd3d3Lmdlb3RydXN0LmNvbS9yZXNvdXJjZXMvcmVwb3Np\n                        dG9yeS9sZWdhbDAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwHwYDVR0j\n                        BBgwFoAUFGeO7YNP1h6dQAQMBEahcDSyD3IwVwYIKwYBBQUHAQEESzBJMB8GCCsG\n                        AQUFBzABhhNodHRwOi8vZ2ouc3ltY2QuY29tMCYGCCsGAQUFBzAChhpodHRwOi8v\n                        Z2ouc3ltY2IuY29tL2dqLmNydDCCAX4GCisGAQQB1nkCBAIEggFuBIIBagFoAHYA\n                        3esdK3oNT6Ygi4GtgWhwfi6OnQHVXIiNPRHEzbbsvswAAAFVoCAHKAAABAMARzBF\n                        AiBpMSxvEkwJEJPTAbVhU6tw0mcpUfCvA2vdc1NrIZ/NPwIhAJwM5NyLp0DW/D7R\n                        PKeSOlrstEAiZOnUHx+xEbHDxjVAAHYApLkJkLQYWBSHuxOizGdwCjw1mAT5G9+4\n                        43fNDsgN3BAAAAFVoCAHSwAABAMARzBFAiA4161JSsynAMiyruICNLjCm3U0MCR3\n                        FHQmXvPSQUqqowIhALkVZznpJjkGNqTzBb7gAAMDW8rYWhLec5UpEvX1WUgDAHYA\n                        aPaY+B9kgr46jO65KB1M/HFRXWeT1ETRCmesu09P+8QAAAFVoCAHYwAABAMARzBF\n                        AiA3z+fqEwWbHJqj8kjgEOhl0CFBJ4XjTtA/rj6+7UjoYwIhALjAPyo3qU5HTb19\n                        10ZR5u/AkHtufwdPo6BTuMX6mXhyMA0GCSqGSIb3DQEBCwUAA4IBAQAl6WtvjBtp\n                        P6UqJZnmNTSIPrr92Gz2YjPEy5jldyG1YkB8zE1rITvz6O2Gk/beKdb49uyHbvzM\n                        3v1donNgo4sRoRhrREVbo7yrbpn/aNLACIOYdxapiZPHgPpNBuQVzBuA8N8F3wis\n                        qo5dpBBPsh1d1KBj49JC8d+SqSTcPz0+qjqhe7u2Oc4JOhRBOSXZS6i+f/NctS9a\n                        NVXhYCANfJI2Dnpl2L0Mpnt0Sf/tfgn+6jpxzwHQWbcRtdKjDNLPRVWkHFJqoDl5\n                        8zrKTTZOI6cPDCk3UblIXgAd69I6I9N8zEVAyhGTzdprIs+TNMayNgQGXw4Atjxw\n                        g1fpz28NmyTf\n                    </ds:X509Certificate>\n                </ds:X509Data>\n            </ds:KeyInfo>\n        </KeyDescriptor>\n\n        <SingleLogoutService Binding=\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect\" Location=\"https://eu-svc.leanix.net/services/idp/profile/SAML2/Redirect/SLO\" />\n        <SingleLogoutService Binding=\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST\" Location=\"https://eu-svc.leanix.net/services/idp/profile/SAML2/POST/SLO\" />\n\n        <NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat>\n        <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>\n\n        <SingleSignOnService Binding=\"urn:mace:shibboleth:1.0:profiles:AuthnRequest\" Location=\"https://eu-svc.leanix.net/services/idp/profile/Shibboleth/SSO\"/>\n        <SingleSignOnService Binding=\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST\" Location=\"https://eu-svc.leanix.net/services/idp/profile/SAML2/POST/SSO\"/>\n        <SingleSignOnService Binding=\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign\" Location=\"https://eu-svc.leanix.net/services/idp/profile/SAML2/POST-SimpleSign/SSO\"/>\n        <SingleSignOnService Binding=\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect\" Location=\"https://eu-svc.leanix.net/services/idp/profile/SAML2/Redirect/SSO\"/>\n    </IDPSSODescriptor>\n\n</EntityDescriptor>",
+                "certificateExpiryDate": null
+            },
+            "links": [
+                {
+                    "rel": "application",
+                    "href": "/applications/eam"
+                },
+                {
+                    "rel": "identityProvider",
+                    "href": "/identityProviders/52ebcb67-c1e6-4a2e-bd5f-e211be346c1e"
+                }
+            ],
+            "thirdParty": false
+        },
+        "name": "VIGTESTD",
+        "featureBundleId": "eas-apm",
+        "status": "ACTIVE",
+        "type": "LIVE",
+        "createdAt": "2021-07-30T21:27:40.660Z",
+        "invitationOnly": false,
+        "allowTransientUsers": false,
+        "url": "https://demo-eu.leanix.net/VIGTESTD",
+        "links": [
+            {
+                "rel": "contract",
+                "href": "/contracts/5b2db257-5618-46fa-a946-1b85b5920177"
+            },
+            {
+                "rel": "instance",
+                "href": "/instances/6871b910-c03e-48ea-bebf-d00ffaaa3ebf"
+            },
+            {
+                "rel": "permissions",
+                "href": "/workspaces/5783b9ad-f377-4529-8785-3271026687c4/permissions"
+            },
+            {
+                "rel": "settings",
+                "href": "/workspaces/5783b9ad-f377-4529-8785-3271026687c4/settings"
+            },
+            {
+                "rel": "events",
+                "href": "/workspaces/5783b9ad-f377-4529-8785-3271026687c4/events"
+            }
+        ],
+        "active": true
+    }
+}

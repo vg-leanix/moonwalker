@@ -1,5 +1,10 @@
 export const state = () => ({
-  wsOptions: { 'mi-k8s': 'MI with K8s', 'mi-base': 'MI - base' },
+  wsOptions: ['Microservice Intelligence - Base',
+    'Microservice Intelligence - Base V2',
+    'Microservice Intelligence - Github',
+    'Microservice Intelligence - Kubernetes',
+    'Microservice Intelligence - SonarQube',
+    'Showcase - All'],
   hostOptions: ['demo-eu'],
   mtmToken: "",
   wsToken: "",
@@ -8,8 +13,13 @@ export const state = () => ({
   apiError: "",
   apiSuccess: false,
   apiSuccessMessage: "",
-  showSubmit: true
-
+  showSubmit: true,
+  firstStep: false,
+  secondStep: false,
+  thirdStep: false,
+  firstStepError: false,
+  secondStepError: false,
+  thirdStepError: false,
 
 
 
@@ -18,14 +28,10 @@ export const state = () => ({
 
 
 export const mutations = {
-  toggleDropdownOn(state) {
-    state.isDropdownVisible = true
-    const body = document.getElementsByTagName('body')[0];
-    body.classList.add("overflow-hidden")
-  },
+
 
   changeApiError(state, error) {
-    state.apiError = error
+    state.apiError = JSON.stringify(JSON.parse(error), null, 4)
     state.apiErrorCode = true
 
   },
@@ -41,6 +47,28 @@ export const mutations = {
 
   setApiBusy(state) {
     state.apiBusy = true
+  },
+
+  setFirstStep(state) {
+    state.firstStep = true
+    state.firstStepError = false
+  },
+  setSecondStep(state) {
+    state.secondStep = true
+    state.secondStepError = false
+  },
+  setThirdStep(state) {
+    state.thirdStep = true
+    state.thirdStepError = false
+  },
+  setFirstStepError(state) {
+    state.firstStepError = true
+  },
+  setSecondStepError(state) {
+    state.secondStepError = true
+  },
+  setThirdStepError(state) {
+    state.thirdStepError = true
   }
 
 }
@@ -51,11 +79,12 @@ export const actions = {
   },
 
   // API Calls //
-  
+
+
   async sendConfig({ commit }, payload) {
 
     // let configJson = JSON.stringify(payload)
-    console.log(payload)
+
     var config = {
       headers: {
         "Content-Type": "application/json; charset=UTF-8",
@@ -66,23 +95,26 @@ export const actions = {
     const send = await this.$axios.$post('/createws', payload, config)
       .then((res) => {
 
-        if (res.status == 200) {
+
+        if (res.status_code_int_api == 200 || res.status_code_int_api == 204) {
 
           commit('changeApiSuccess');
+          commit('setFirstStep')
           commit('setApiReady')
         }
 
-        else if (res.status == 400) {
-          let stringErr = "400 error"
-          commit('changeApiError', stringErr);
-        }
       })
-      .catch((res) => {
+      .catch((err) => {
+        if (err.response.status == 400) {
+          console.log(err.response.data)
+          commit('changeApiError', err.response.data.detail);
+          commit('setFirstStepError')
+          commit('setApiReady')
+        }
 
-        let stringErr = String(err)
 
-        commit('changeApiError', stringErr);
-        commit('setApiReady')
+
+
       })
 
   }
