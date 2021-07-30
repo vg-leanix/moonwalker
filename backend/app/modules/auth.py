@@ -22,9 +22,10 @@ class Config(BaseModel):
     wsName: str
 
 class ProvisioningBody(BaseModel):
-    config: Config
-    provisionReqBody: ProvisionReqBody
-    apply_base_model: bool
+    extension: List[str]
+    host: str
+    apiToken: str
+    addBaseModel: bool
 
 @router.post("/createws", tags=["auth"])
 async def create_workspace(config: Config):
@@ -49,9 +50,9 @@ async def create_workspace(config: Config):
 
 @router.post("/updateProvisioning", tags=["auth"])
 async def update_provisioning(param: ProvisioningBody):
-    bearer_token = lx.authenticate(host=param.config.host, apitoken=param.config.apiToken)
+    bearer_token = lx.authenticate(host=param.host, apitoken=param.apiToken)
 
-    status_code, error = provisioning.put_provisioning(host=param.config.host, jwt_token=bearer_token,apply_base_model=True, extenstions=param.provisionReqBody.extensions)
+    status_code, error = provisioning.put_provisioning(host=param.host, jwt_token=bearer_token,apply_base_model=param.addBaseModel, extenstions=param.extensions)
 
     if not error and ((status_code == 200 ) or (status_code == 204)):
         output = {
