@@ -22,7 +22,7 @@ module.exports = {
       {
         'vg': {                          /* your theme name */
            'primary' : '#166bff',
-           'primary-focus' : '#5662f6',     /* Primary color - focused */
+           'primary-focus' : '#2474ff',     /* Primary color - focused */
            'primary-content' : '#fcfdff',   /* Foreground content color to use on primary color */
 
            'secondary' : '#5662f6',         /* Secondary color */
@@ -30,7 +30,7 @@ module.exports = {
            'secondary-content' : '#ffffff', /* Foreground content color to use on secondary color */
 
            'accent' : '#37cdbe',            /* Accent color */
-           'accent-focus' : '#2aa79b',      /* Accent color - focused */
+           'accent-focus' : '#16a5ff',      /* Accent color - focused */
            'accent-content' : '#ffffff',    /* Foreground content color to use on accent color */
 
            'neutral' : '#c0c3c3',           /* Neutral color */

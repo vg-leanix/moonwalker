@@ -14,7 +14,7 @@ K8S_PROCESSOR = "app/modules/k8s.json"
 WS_REQUEST = "app/modules/workspace_request.json"
 TECHUSER = "app/modules/techuser_request.json"
 router = APIRouter(
-    # psrefix="/v1/auth",
+    prefix="/v1",
     tags=["auth"],
 )
 
@@ -33,15 +33,25 @@ class Workspace(BaseModel):
 
 
 @router.post("/createws", tags=["auth"])
-async def create_workspace(workspace: Workspace):
-    bearer_token = lx.authenticate(
+async def create_workspace(workspace: Workspace, status_code=200):
+    bearer_token, error = lx.authenticate(
         host=workspace.instance, apitoken=workspace.apiToken)
 
-    status_code_ws, error_ws, ws_id = ws.create_workspace(workspace_name=workspace.workspaceName, jwt_token=bearer_token,
-                                                          host=workspace.instance, request=WS_REQUEST)
+    if error:
+        raise HTTPException(
+            status_code=400,
+            detail=json.dumps({"error": error}),
 
-    status_code_techuser, error_techuser, apiToken = ws.create_tech_user(name="ext-integration", host=workspace.instance,
-                                                                         jwt_token=bearer_token, specs=TECHUSER)
+        )
+
+    # status_code_ws, error_ws, ws_id = ws.create_workspace(workspace_name=workspace.workspaceName, jwt_token=bearer_token,
+    #                                                       host=workspace.instance, request=WS_REQUEST)
+
+    # status_code_techuser, error_techuser, apiToken = ws.create_tech_user(name="ext-integration", host=workspace.instance,
+    #                                                                      jwt_token=bearer_token, specs=TECHUSER, workspace_id=ws_id)
+
+    status_code_ws, error_ws, ws_id = 200, None, "1234"
+    status_code_techuser, error_techuser, apiToken = 200, None, "1234"
 
     statuses = {"status_ws": status_code_ws,
                 "status_techuser": status_code_techuser}
@@ -71,20 +81,21 @@ async def create_workspace(workspace: Workspace):
         output = {
             "workspace": {
                 "status": status_code_ws,
+                "workspaceId":ws_id,
                 "error": error_ws
             },
             "techuser": {
                 "status": status_code_techuser,
                 "error": error_techuser,
-                "apiToken":apiToken
+                "apiToken": apiToken
             }
         }
 
-    return JSONResponse(output)
+    return JSONResponse(content=output, status_code=200)
 
 
-@router.post("/workspace", tags=["auth"])
-async def prepare_workspace(config: Config):
+@router.post("/install", tags=["auth"])
+async def install_workspace(config: Config):
     bearer_token = lx.authenticate(
         host=config.instance, apitoken=config.apiToken)
 
@@ -130,4 +141,4 @@ async def prepare_workspace(config: Config):
             }
         }
 
-    return JSONResponse(output)
+    return JSONResponse(content=output, status_code=200)

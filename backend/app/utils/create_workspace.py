@@ -13,10 +13,10 @@ def create_workspace(workspace_name: str, jwt_token: str, host: str, request: st
 
     workspace_json['name'] = workspace_name
 
-    print(workspace_json['name'])
     try:
         res = requests.post(url=endpoint, headers=header, json=workspace_json)
         status_code = res.status_code
+        print("MTM status: ", status_code)
         response_data = res.json()
         workspace_id = response_data['data']['id']
         error = None
@@ -24,6 +24,8 @@ def create_workspace(workspace_name: str, jwt_token: str, host: str, request: st
     except Exception as e:
         error = str(e)
         status_code = None
+        workspace_id = None
+        print(e)
 
     return status_code, error, workspace_id
 
