@@ -3,7 +3,10 @@ export default {
   head: {
     title: 'moonshot',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'en',
+     
+
+
     },
     meta: [
       { charset: 'utf-8' },
@@ -16,6 +19,10 @@ export default {
       {
         rel: 'stylesheet',
         href: 'http://fonts.cdnfonts.com/css/axiforma'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css'
       }
     ]
   },

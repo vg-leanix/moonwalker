@@ -1,0 +1,10 @@
+{
+    "userName": "vg-test",
+    "permissionRole": "ADMIN",
+    "customerRoles": null,
+    "accessControlEntities": null,
+    "apiTokenData": {
+        "expiry": "2028-12-30",
+        "description": "vg-test"
+    }
+}
