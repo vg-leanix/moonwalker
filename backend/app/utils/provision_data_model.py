@@ -29,7 +29,8 @@ def provision_data_model(edition: str, jwt_token: str):
     header = {'Authorization': auth_header, "Content-Type": "application/json"}
     available_extensions = get_extensions(jwt_token=jwt_token)
     error = ""
-
+    print(available_extensions)
+    
     if edition in available_extensions.keys():
         extension = available_extensions[edition]
         

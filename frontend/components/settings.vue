@@ -207,7 +207,7 @@
 
         <!-- Error Message -->
         <div
-          v-show="this.$store.state.apiErrorCode"
+          v-if="this.$store.state.apiError"
           class="flex flex-col mt-6 w-1/2 bg-red-600 rounded-md h-auto p-4"
         >
           <p class="font-bold text-white">Error</p>
@@ -215,21 +215,54 @@
             class="flex flex-wrap w-full bg-gray-100 rounded-md opacity-80 p-3"
           >
             <pre class="text-black text-xs font-light w-full">
-              {{ this.$store.state.apiError }}
+              {{ this.$store.state.apiErrorMessage }}
             </pre>
           </div>
         </div>
 
         <!-- Success Message -->
-        <!-- <apiMessage
-          v-if="this.$store.state.apiSuccess"
-          :alertType="this.$store.state.apiMessageType"
-        /> -->
+
+        <div
+          v-if="this.$store.state.thirdStep"
+          class="flex  mt-6 w-1/2 bg-green-400 rounded-md h-auto p-4 items-center"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-10 w-10 stroke-current text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          <div
+            class="
+              text-white text-lg
+              flex
+              flex-col
+
+              
+              ml-6
+              
+              w-auto
+              font-semibold
+            "
+          >
+          <p class=" inline-block">Created workspace:</p> <i> {{ this.$store.state.workspace.workspaceName }} </i>
+            
+          <p class=" inline-block">Workspace ID:</p> {{this.$store.state.installParams.workspaceId}}
+            
+          </div>
+        </div>
 
         <!-- Create Workspace Button -->
         <button
           data-theme="vg"
-          v-if="this.$store.state.showCreateWS"
+          v-if="this.$store.state.showCreateWS && !this.$store.state.apiError"
           :class="{ loading: this.$store.state.apiBusy }"
           class="mt-6 btn btn-primary rounded-md py-2 w-1/4 btn"
           type="submit"
@@ -240,7 +273,11 @@
         <!-- Install Workspace -->
         <button
           data-theme="vg"
-          v-if="!this.$store.state.showCreateWS"
+          v-if="
+            !this.$store.state.showCreateWS &&
+            !this.$store.state.thirdStep &&
+            !this.$store.state.apiError
+          "
           class="btn btn-primary mt-6 rounded-md py-2 w-1/4"
           :class="{ loading: this.$store.state.apiBusy }"
           type="submit"
@@ -253,12 +290,7 @@
 </template>
 
 <script>
-import apiMessage from "./apiMessage.vue";
 export default {
-  components: {
-    apiMessage,
-  },
-
   name: "settings",
   data() {
     return {};
@@ -272,10 +304,10 @@ export default {
         if (this.$store.state.firstStep) {
           // if workspace has already been created
 
-          this.$store.dispatch("sendConfig");
+          this.$store.dispatch("installWorkspace");
         } else {
           // if workspace has not already been created
-          this.$store.dispatch("sendWorkspace");
+          this.$store.dispatch("createWorkspace");
         }
       }
     },

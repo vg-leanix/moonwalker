@@ -1,0 +1,14 @@
+{
+    "status": "ENABLED",
+    "feature": {
+        "id": "customizing.model",
+        "type": "FUNCTIONAL",
+        "description": "Shows the model editor in the administration area to support customizing.",
+        "status": "ENABLED",
+        "group": "EXCEPTION",
+        "customized": false
+    },
+    "workspace": {
+        "id": ""
+    }
+}

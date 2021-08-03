@@ -12,13 +12,17 @@ def put_processor(host: str, jwt_token: str, processor: str):
     auth_header = 'Bearer ' + jwt_token
     header = {'Authorization': auth_header, "Content-Type": "application/json"}
 
-    try:
-        r = requests.put(request_url, json=processor_json, headers=header)
-        status_code = r.status_code
+    
+    r = requests.put(request_url, json=processor_json, headers=header)
+    status_code = r.status_code
+
+    if status_code == 200 or status_code == 204:
         error = None
 
-    except Exception as e:
-        error = str(e)
-        status_code = None
+    else :
+        error = r.json()
+        status_code = r.status_code
 
+
+    
     return status_code, error

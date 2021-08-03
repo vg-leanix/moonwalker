@@ -7,7 +7,7 @@ export const state = () => ({
     'Microservice Intelligence - SonarQube',
     'Showcase - All'],
   hostOptions: ['demo-eu'],
-  techuserApiToken: "",
+
 
   workspace: {
     instance: "",
@@ -16,7 +16,7 @@ export const state = () => ({
   },
 
   installParams: {
-    apiToken: "",
+    techuserApiToken: "",
     edition: "",
     instance: "",
     workspaceId: "",
@@ -25,11 +25,8 @@ export const state = () => ({
 
   // API State Specs
   apiBusy: false,
-  apiErrorCode: false,
-  apiError: "",
-  apiSuccess: false,
-  apiMessageType:"",
-  apiSuccessMessage: "",
+  apiError: false,
+  apiErrorMessage: "",
   showCreateWS: true,
 
   // Step Panel Specs
@@ -52,6 +49,7 @@ export const mutations = {
     state.installParams.edition = val
   },
 
+
   updateInstance(state, val) {
     state.workspace.instance = val
     state.installParams.instance = val
@@ -72,21 +70,9 @@ export const mutations = {
   },
 
   changeApiError(state, error) {
-    state.apiError = JSON.stringify(error, null, 1)
-    state.apiErrorCode = true
+    state.apiErrorMessage = JSON.stringify(error, null, 1)
+    state.apiError = true
 
-  },
-  changeApiSuccess(state) {
-    state.apiSuccess = true
-    state.apiMessageType = "success"
-    state.apiSuccessMessage = "Workspace sucessfully created."
-  },
-
-  deleteApiSuccess(state) {
-    state.apiSuccess=false
-    state.apiSuccessMessage=""
-    
-    
   },
 
   setApiReady(state) {
@@ -119,8 +105,8 @@ export const mutations = {
   setThirdStepError(state) {
     state.thirdStepError = true
   },
-  setTechUserApiToken(state, payload) {
-    state.techuserApiToken = payload
+  setTechuserApiToken(state, payload) {
+    state.installParams.techuserApiToken = payload
   },
   setWorkspaceId(state, payload) {
     state.installParams.workspaceId = payload
@@ -136,9 +122,8 @@ export const actions = {
   // API Calls //
 
 
-  async sendConfig({ commit, state }) {
+  async installWorkspace({ commit, state }) {
 
-    // let configJson = JSON.stringify(payload)
 
     var config = {
       headers: {
@@ -153,20 +138,43 @@ export const actions = {
       .then((res) => {
 
 
-        if (res.status_code_int_api == 200 || res.status_code_int_api == 204) {
+        if (res.status == 200) {
 
           commit('changeApiSuccess');
-          commit('setFirstStep')
-          commit('setApiReady')
-          
+          commit('setSecondStep')
+
+
+          return this.$axios.post('/v1/proccessors', payload, config)
+            .then((res) => {
+
+              if (res.status == 200) {
+
+                
+                commit('changeApiSuccess');
+                commit('setThirdStep')
+                
+                commit('setApiReady')
+
+              }
+
+            })
+            .catch((res) => {
+              if (err.response.status == 400) {
+                console.log(err.response.data)
+                commit('changeApiError', err.response.data.detail);
+                commit('setThirdStepError')
+                commit('setApiReady')
+              }
+            })
+
         }
 
       })
       .catch((err) => {
         if (err.response.status == 400) {
           console.log(err.response.data)
-          commit('changeApiError', err.response.data.detail);
-          commit('setFirstStepError')
+          commit('setSecondStepError')
+          commit('changeApiError', JSON.parse(err.response.data.detail));
           commit('setApiReady')
         }
 
@@ -177,7 +185,7 @@ export const actions = {
 
   },
 
-  async sendWorkspace({ commit, state }) {
+  async createWorkspace({ commit, state }) {
 
     var config = {
       headers: {
@@ -197,14 +205,13 @@ export const actions = {
           let techuserApiToken = res.data.techuser.apiToken
           let workspaceId = res.data.workspace.workspaceId
 
-          commit('setTechUserApiToken', techuserApiToken)
+          commit('setTechuserApiToken', techuserApiToken)
           commit('setWorkspaceId', workspaceId)
-          commit('changeApiSuccess');
           commit('setFirstStep')
           commit('setApiReady')
-          
-          
-          
+
+
+
 
         }
 
@@ -217,7 +224,8 @@ export const actions = {
 
           commit('changeApiError', JSON.parse(err.response.data.detail));
           commit('setFirstStepError')
-          commit('setApiReady')
+
+
         }
 
 
@@ -225,7 +233,8 @@ export const actions = {
 
       })
 
-  }
+  },
+
 
 
 
