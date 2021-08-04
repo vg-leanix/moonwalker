@@ -1,7 +1,7 @@
 {
     "allowTransientUsers": true,
     "status": "ACTIVE",
-    "type": "LIVE",
+    "type": "SANDBOX",
     "contract": {
         "id": "5b2db257-5618-46fa-a946-1b85b5920177",
         "featureBundleId": "ultimate-v2",
