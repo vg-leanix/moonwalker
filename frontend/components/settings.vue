@@ -224,7 +224,16 @@
 
         <div
           v-if="this.$store.state.thirdStep"
-          class="flex  mt-6 w-1/2 bg-green-400 rounded-md h-auto p-4 items-center"
+          class="
+            flex
+            mt-6
+            w-1/2
+            bg-green-400
+            rounded-md
+            h-auto
+            p-4
+            items-center
+          "
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -240,22 +249,30 @@
             />
           </svg>
           <div
-            class="
-              text-white text-lg
-              flex
-              flex-col
-
-              
-              ml-6
-              
-              w-auto
-              font-semibold
-            "
+            class="text-white text-lg flex flex-col ml-6 w-auto font-semibold"
           >
-          <p class=" inline-block">Created workspace:</p> <i> {{ this.$store.state.workspace.workspaceName }} </i>
-            
-          <p class=" inline-block">Workspace ID:</p> {{this.$store.state.installParams.workspaceId}}
-            
+            <div class="">
+              <p class="inline-block font-light text-lg">Created workspace:</p>
+              <p class="inline-block">
+                {{ this.$store.state.workspace.workspaceName }}
+              </p>
+            </div>
+
+            <div>
+              <p class="inline-block font-light">Workspace ID:</p>
+              <p class="inline-block">
+                {{ this.$store.state.installParams.workspaceId }}
+              </p>
+            </div>
+
+            <div>
+              <p class="inline-block font-light">URL:</p>
+              <a
+                class="inline-block"
+                v-bind:href="this.$store.state.workspace.workspaceUrl"
+                >{{this.$store.state.workspace.workspaceUrl}}</a
+              >
+            </div>
           </div>
         </div>
 
@@ -285,6 +302,7 @@
           Install Edition
         </button>
       </form>
+      
     </div>
   </div>
 </template>
@@ -296,6 +314,11 @@ export default {
     return {};
   },
   methods: {
+    goToWorkspace() {
+      let workspaceUrl = this.$store.state.workspace.workspaceUrl;
+      console.log(workspaceUrl)
+      window.location = workspaceUrl;
+    },
     sendConfig() {
       let apiBusy = this.$store.state.apiBusy;
 

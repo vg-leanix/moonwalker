@@ -26,9 +26,9 @@ def create_workspace(workspace_name: str, jwt_token: str, host: str,
         print("MTM status: ", status_code)
         response_data = res.json()
         workspace_id = response_data['data']['id']
-        workpsace_url = response_data['data']['url']
+        workspace_url = response_data['data']['url']
         custom_features_json['workspace']['id'] = workspace_id
-        print(custom_features_json)
+        
         res = requests.post(
             url=endpoint_cf, headers=header, json=custom_features_json)
 
@@ -37,7 +37,7 @@ def create_workspace(workspace_name: str, jwt_token: str, host: str,
 
             status_code_support_user, error_support_user = create_support_user(host=host, jwt_token=jwt_token,
                                                                                request=support_user, workspace_id=workspace_id,
-                                                                               workspace_url=workpsace_url,
+                                                                               workspace_url=workspace_url,
                                                                                workspace_name=workspace_name)
 
             if status_code_support_user == 200:
@@ -52,6 +52,7 @@ def create_workspace(workspace_name: str, jwt_token: str, host: str,
             error = res.json()
             print(error)
             workspace_id = workspace_id
+            workspace_url = workspace_url
             status_code = res.status_code
 
     else:
@@ -59,8 +60,9 @@ def create_workspace(workspace_name: str, jwt_token: str, host: str,
         print(error)
         status_code = res.status_code
         workspace_id = None
+        workspace_url = None
 
-    return status_code, error, workspace_id
+    return status_code, error, workspace_id, workspace_url
 
 
 def create_tech_user(name: str, workspace_id: str, host: str, jwt_token: str, specs: str):

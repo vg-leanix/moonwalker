@@ -13,13 +13,15 @@ export const state = () => ({
     instance: "",
     apiToken: "EjFpbrBJ3ehuY8exUJcEfVcxw6KECVrTpmdz6FM4",
     workspaceName: "",
+    workspaceUrl: ""
   },
 
   installParams: {
     techuserApiToken: "",
     edition: "",
     instance: "",
-    workspaceId: "",
+    workspaceId: ""
+
   },
 
 
@@ -44,6 +46,10 @@ export const state = () => ({
 
 
 export const mutations = {
+
+  updateWorkspaceUrl(state, val) {
+    state.workspace.workspaceUrl = val
+  },
 
   updateWorkspaceEdition(state, val) {
     state.installParams.edition = val
@@ -149,10 +155,10 @@ export const actions = {
 
               if (res.status == 200) {
 
-                
+
                 commit('changeApiSuccess');
                 commit('setThirdStep')
-                
+
                 commit('setApiReady')
 
               }
@@ -204,9 +210,11 @@ export const actions = {
 
           let techuserApiToken = res.data.techuser.apiToken
           let workspaceId = res.data.workspace.workspaceId
+          let workspaceUrl = res.data.workspace.workspaceUrl
 
           commit('setTechuserApiToken', techuserApiToken)
           commit('setWorkspaceId', workspaceId)
+          commit('updateWorkspaceUrl', workspaceUrl)
           commit('setFirstStep')
           commit('setApiReady')
 

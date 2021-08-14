@@ -10,11 +10,11 @@ import app.utils.put_processor as int_api
 import app.utils.provision_data_model as provision
 import app.utils.create_workspace as ws
 
-K8S_PROCESSOR = "app/modules/k8s.json"
-WS_REQUEST = "app/modules/workspace_request.json"
-TECHUSER = "app/modules/techuser_request.json"
-CUSTOM_FEATURES = "app/modules/customFeature.json"
-SUPPORT_USER = "app/modules/support_user.json"
+K8S_PROCESSOR = "app/requests/k8s.json"
+WS_REQUEST = "app/requests/workspace_request.json"
+TECHUSER = "app/requests/techuser_request.json"
+CUSTOM_FEATURES = "app/requests/customFeature.json"
+SUPPORT_USER = "app/requests/support_user.json"
 
 
 router = APIRouter(
@@ -34,13 +34,14 @@ class Workspace(BaseModel):
     workspaceName: str
     apiToken: str
     instance: str
+    workspaceUrl: str
 
 
 @router.post("/createws", tags=["auth"])
 async def create_workspace(workspace: Workspace, status_code=200):
     bearer_token, error = lx.authenticate(
         host=workspace.instance, apitoken=workspace.apiToken)
-
+    print(bearer_token)
     if error:
         raise HTTPException(
             status_code=400,
@@ -48,9 +49,9 @@ async def create_workspace(workspace: Workspace, status_code=200):
 
         )
 
-    status_code_ws, error_ws, ws_id = ws.create_workspace(workspace_name=workspace.workspaceName, jwt_token=bearer_token,
-                                                          host=workspace.instance, request=WS_REQUEST, 
-                                                          custom_features=CUSTOM_FEATURES, support_user=SUPPORT_USER)
+    status_code_ws, error_ws, ws_id, ws_url = ws.create_workspace(workspace_name=workspace.workspaceName, jwt_token=bearer_token,
+                                                                  host=workspace.instance, request=WS_REQUEST,
+                                                                  custom_features=CUSTOM_FEATURES, support_user=SUPPORT_USER)
 
     status_code_techuser, error_techuser, apiToken = ws.create_tech_user(name="ext-integration", host=workspace.instance,
                                                                          jwt_token=bearer_token, specs=TECHUSER, workspace_id=ws_id)
@@ -87,6 +88,7 @@ async def create_workspace(workspace: Workspace, status_code=200):
             "workspace": {
                 "status": status_code_ws,
                 "workspaceId": ws_id,
+                "workspaceUrl": ws_url,
                 "error": error_ws
             },
             "techuser": {
