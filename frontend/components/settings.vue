@@ -210,11 +210,35 @@
           v-if="this.$store.state.apiError"
           class="flex flex-col mt-6 w-1/2 bg-red-600 rounded-md h-auto p-4"
         >
-          <p class="font-bold text-white">Error</p>
+        <div class="mb-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 stroke-current text-white inline-block mr-2"
+            fill="none"
+            viewBox="0 0 24 24"
+            
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          <p class="font-bold text-white inline-block">Ooops!</p>
+          </div>
           <div
             class="flex flex-wrap w-full bg-gray-100 rounded-md opacity-80 p-3"
           >
-            <pre class="text-black text-xs font-light w-full">
+            <pre
+              class="
+                text-black text-xs
+                font-light
+                w-full
+                break-words
+                whitespace-pre-wrap
+              "
+            >
               {{ this.$store.state.apiErrorMessage }}
             </pre>
           </div>
@@ -270,7 +294,7 @@
               <a
                 class="inline-block"
                 v-bind:href="this.$store.state.workspace.workspaceUrl"
-                >{{this.$store.state.workspace.workspaceUrl}}</a
+                >{{ this.$store.state.workspace.workspaceUrl }}</a
               >
             </div>
           </div>
@@ -302,7 +326,6 @@
           Install Edition
         </button>
       </form>
-      
     </div>
   </div>
 </template>
@@ -316,7 +339,7 @@ export default {
   methods: {
     goToWorkspace() {
       let workspaceUrl = this.$store.state.workspace.workspaceUrl;
-      console.log(workspaceUrl)
+      console.log(workspaceUrl);
       window.location = workspaceUrl;
     },
     sendConfig() {

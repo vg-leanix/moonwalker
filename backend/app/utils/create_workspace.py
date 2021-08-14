@@ -78,17 +78,21 @@ def create_tech_user(name: str, workspace_id: str, host: str, jwt_token: str, sp
 
     techuser_json['userName'] = name
 
-    try:
-        res = requests.post(url=endpoint, params=param,
+
+    res = requests.post(url=endpoint, params=param,
                             headers=header, json=techuser_json)
 
+    if res.status_code == 200:
         response_json = res.json()
-        apiToken = response_json['data']['apiTokenData']['token']
         status_code = res.status_code
+        apiToken = response_json['data']['apiTokenData']['token']
         error = None
+    
+    else:
+        apiToken = None
+        error = res.json()
+        status_code = res.status_code
 
-    except Exception as e:
-        error = str(e)
-        status_code = None
+    
 
     return status_code, error, apiToken
