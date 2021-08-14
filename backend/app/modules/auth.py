@@ -41,7 +41,7 @@ class Workspace(BaseModel):
 async def create_workspace(workspace: Workspace, status_code=200):
     bearer_token, error = lx.authenticate(
         host=workspace.instance, apitoken=workspace.apiToken)
-    print(bearer_token)
+    
     if error:
         raise HTTPException(
             status_code=400,
