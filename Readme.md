@@ -12,8 +12,11 @@
  ```bash
  docker-compose up --build
  ```
-4. Go to [localhost](http://localhost) to see the app
-Enjoy! 🦊
+4. Go to [localhost](http://localhost) to see the app 
+
+
+
+#### Enjoy! 🦊
 
 
 
