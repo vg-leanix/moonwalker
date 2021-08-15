@@ -77,6 +77,9 @@ module.exports = {
     }),
 
     extend: {
+      left:{
+        '1/8':'12%'
+      },
       fontFamily: {
         'lix': ['Axiforma']
       },

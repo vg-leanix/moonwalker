@@ -48,7 +48,17 @@ export const state = () => ({
 
 export const mutations = {
   setTooltipSuperAdmin(state){
+    const body = document.getElementsByTagName('body')[0];
     state.superAdminToolTip = !state.superAdminToolTip
+
+    if(state.superAdminToolTip){
+      body.classList.add("overflow-hidden")
+    }
+    else{
+      body.classList.remove("overflow-hidden")
+
+    }
+    
   },
   
   

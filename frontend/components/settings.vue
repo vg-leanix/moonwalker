@@ -17,9 +17,10 @@
     <div data-theme="vg" class="flex w-full h-full p-5">
       <ul class="steps w-full">
         <li
-          :class="stepOne"
           class="step"
-          v-if="!this.$store.state.firstStepError"
+          v-if="
+            !this.$store.state.firstStepError && !this.$store.state.firstStep
+          "
         >
           Create Workspace
         </li>
@@ -31,11 +32,21 @@
         >
           Create Workspace
         </li>
+        <li
+          :class="stepOne"
+          class="step"
+          v-if="this.$store.state.firstStep"
+          data-content="✓"
+        >
+          Created Workspace
+        </li>
 
         <li
           :class="stepTwo"
           class="step"
-          v-if="!this.$store.state.secondStepError"
+          v-if="
+            !this.$store.state.secondStepError && !this.$store.state.secondStep
+          "
         >
           Provision Data Model
         </li>
@@ -48,9 +59,19 @@
           Provision Data Model
         </li>
         <li
+          :class="stepTwo"
+          class="step"
+          v-if="this.$store.state.secondStep"
+          data-content="✓"
+        >
+          Provisioned Data Model
+        </li>
+        <li
           :class="stepThree"
           class="step"
-          v-if="!this.$store.state.thirdStepError"
+          v-if="
+            !this.$store.state.thirdStepError && !this.$store.state.thirdStep
+          "
         >
           Upload Processors
         </li>
@@ -61,6 +82,15 @@
           data-content="✕"
         >
           Upload Processors
+        </li>
+
+        <li
+          :class="stepThree"
+          class="step"
+          v-if="this.$store.state.thirdStep"
+          data-content="✓"
+        >
+          Uploaded Processors 🎉
         </li>
       </ul>
     </div>
@@ -148,6 +178,7 @@
             >Enter Superadmin API Token:</label
           >
 
+          <!-- Tooltip -->
           <div class="mt-1 w-full rounded-md shadow-sm inline-block">
             <input
               type="password"
@@ -191,17 +222,18 @@
                 />
               </svg>
             </button>
+            <!-- Tooltip Popup -->
             <div
               v-if="this.$store.state.superAdminToolTip"
               class="
                 fixed
                 top-1/4
+                
                 left-1/4
-                right-1/2
                 flex flex-col
                 items-center
                 z-50
-                w-1/2
+                w-8/12
                 h-auto
                 rounded-md
                 shadow-md
@@ -215,12 +247,31 @@
                 <p class="font-medium text-lg">
                   How to create a super admin token?
                 </p>
-                <a
-                  href="https://leanix.atlassian.net/wiki/spaces/CNS/pages/1341915187/CNS%20Customer%20Success%20Enablement"
-                >
-                  <img src="~/assets/img/thumbnail-tooltip.png" />
-                </a>
+
+                <div class=" flex flex-row overflow-hidden mt-4 ">
+                  <div class="w-1/2 ">
+                    <p class="text-center font-bold mb-2">Watch How-To Video</p>
+                    <a
+                      href="https://leanix.atlassian.net/wiki/spaces/CNS/pages/1341915187/CNS%20Customer%20Success%20Enablement"
+                    >
+                      <img class="object-cover " src="~/assets/img/thumbnail-tooltip.png" />
+                    </a>
+                  </div>
+
+                  <div class="divider divider-vertical justify-bottom"></div>
+
+                  <div class="w-1/2 items-center ">
+                  <p class="text-center font-bold mb-2">Read Confluence Step-by-Step Guide</p>
+                  <a
+                      href="https://leanix.atlassian.net/wiki/spaces/CNS/pages/1341915187/CNS%20Customer%20Success%20Enablement"
+                      
+                    >
+                      <img class="object-cover h-full" src="~/assets/img/thumbnail-confluence.png" />
+                    </a>
+                    </div>
+                </div>
               </div>
+
               <button
                 type="button"
                 class="
@@ -228,8 +279,9 @@
                   rounded-md
                   text-sm text-white
                   p-2
-                  mt-4
+                  mt-6
                   w-1/4
+                  hover:opacity-90
                 "
                 @click="openTooltip"
               >
@@ -339,6 +391,7 @@
               d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
             />
           </svg>
+
           <div
             class="text-white text-lg flex flex-col ml-6 w-auto font-semibold"
           >
@@ -432,16 +485,19 @@ export default {
     stepOne: function () {
       return {
         "step-primary": this.$store.state.firstStep,
+        "step-success": this.$store.state.firstStep,
       };
     },
     stepTwo: function () {
       return {
         "step-primary": this.$store.state.secondStep,
+        "step-success": this.$store.state.secondStep,
       };
     },
     stepThree: function () {
       return {
         "step-primary": this.$store.state.thirdStep,
+        "step-success": this.$store.state.thirdStep,
       };
     },
 
