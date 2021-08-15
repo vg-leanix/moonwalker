@@ -1,3 +1,11 @@
+# Moonshot  
+###### The intuitive LeanIX workspace provisioning service 
+
+![alt text](https://github.com/vg-leanix/moonwalker/blob/main/thumbnail.png "Moonshot")
+
+
+
+
 # Installation
 
 **1. Clone repo:**
