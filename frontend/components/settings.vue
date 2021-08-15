@@ -205,12 +205,12 @@
             <button
               v-if="!this.$store.state.superAdminToolTip"
               type="button"
-              class="relative p-2 pt-3 inline-block"
+              class="relative p-2 pt-3 inline-block "
               @click="openTooltip"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6 stroke-current text-lix"
+                class="h-6 w-6 stroke-current text-lix hover:opacity-60"
                 fill="none"
                 viewBox="0 0 24 24"
               >
@@ -253,6 +253,8 @@
                     <p class="text-center font-bold mb-2">Watch How-To Video</p>
                     <a
                       href="https://leanix.atlassian.net/wiki/spaces/CNS/pages/1341915187/CNS%20Customer%20Success%20Enablement"
+                      target="_blank" 
+                      rel="noopener noreferrer"
                     >
                       <img class="object-cover " src="~/assets/img/thumbnail-tooltip.png" />
                     </a>
@@ -264,6 +266,8 @@
                   <p class="text-center font-bold mb-2">Read Confluence Step-by-Step Guide</p>
                   <a
                       href="https://leanix.atlassian.net/wiki/spaces/CNS/pages/1341915187/CNS%20Customer%20Success%20Enablement"
+                      target="_blank" 
+                      rel="noopener noreferrer"
                       
                     >
                       <img class="object-cover h-full" src="~/assets/img/thumbnail-confluence.png" />
