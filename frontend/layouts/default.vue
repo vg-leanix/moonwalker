@@ -5,6 +5,7 @@
       <div
       class="z-20"
       @click="openTooltip"
+      
       :class="{
         'bg-gray-800 ': this.$store.state.superAdminToolTip,
         'bg-opacity-50': this.$store.state.superAdminToolTip,
