@@ -4,6 +4,7 @@
       <AppHeader />
       <div
       class="z-20"
+      @click="openTooltip"
       :class="{
         'bg-gray-800 ': this.$store.state.superAdminToolTip,
         'bg-opacity-50': this.$store.state.superAdminToolTip,
@@ -25,6 +26,11 @@ import AppHeader from "../components/AppHeader";
 export default {
   components: {
     AppHeader,
+  },
+  methods: {
+    openTooltip() {
+      this.$store.commit("setTooltipSuperAdmin");
+    }
   },
 };
 </script>

@@ -114,6 +114,7 @@
             <select
               name="instance"
               required
+              autofocus
               :disabled="this.$store.state.firstStep"
               id="instance"
               v-model="instance"
@@ -153,6 +154,7 @@
                 'text-gray-600': !this.$store.state.showCreateWS,
               }"
               required
+              
               :disabled="this.$store.state.firstStep"
               class="
                 focus:ring-indigo-500
