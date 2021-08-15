@@ -7,6 +7,7 @@ export const state = () => ({
     'Microservice Intelligence - SonarQube',
     'Showcase - All'],
   hostOptions: ['demo-eu'],
+  superAdminToolTip: false,
 
 
   workspace: {
@@ -46,7 +47,11 @@ export const state = () => ({
 
 
 export const mutations = {
-
+  setTooltipSuperAdmin(state){
+    state.superAdminToolTip = !state.superAdminToolTip
+  },
+  
+  
   updateWorkspaceUrl(state, val) {
     state.workspace.workspaceUrl = val
   },

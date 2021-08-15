@@ -141,13 +141,14 @@
         </div>
 
         <!-- API Token Select -->
-        <div class="w-1/2" v-if="this.$store.state.showCreateWS">
+        <div class="w-6/12" v-if="this.$store.state.showCreateWS">
           <label
             for="apiToken"
             class="block text-sm font-medium text-gray-700 mt-6"
             >Enter Superadmin API Token:</label
           >
-          <div class="mt-1 relative rounded-md shadow-sm">
+
+          <div class="mt-1 w-full rounded-md shadow-sm inline-block">
             <input
               type="password"
               name="apiToken"
@@ -168,6 +169,73 @@
               "
               placeholder=""
             />
+          </div>
+          <div class="absolute inline-block align-middle">
+            <button
+              v-if="!this.$store.state.superAdminToolTip"
+              type="button"
+              class="relative p-2 pt-3 inline-block"
+              @click="openTooltip"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 stroke-current text-lix"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </button>
+            <div
+              v-if="this.$store.state.superAdminToolTip"
+              class="
+                fixed
+                top-1/4
+                left-1/4
+                right-1/2
+                flex flex-col
+                items-center
+                z-50
+                w-1/2
+                h-auto
+                rounded-md
+                shadow-md
+                bg-white
+                text-gray-600 text-xs
+                font-light
+                p-3
+              "
+            >
+              <div>
+                <p class="font-medium text-lg">
+                  How to create a super admin token?
+                </p>
+                <a
+                  href="https://leanix.atlassian.net/wiki/spaces/CNS/pages/1341915187/CNS%20Customer%20Success%20Enablement"
+                >
+                  <img src="~/assets/img/thumbnail-tooltip.png" />
+                </a>
+              </div>
+              <button
+                type="button"
+                class="
+                  bg-green-400
+                  rounded-md
+                  text-sm text-white
+                  p-2
+                  mt-4
+                  w-1/4
+                "
+                @click="openTooltip"
+              >
+                close
+              </button>
+            </div>
           </div>
         </div>
 
@@ -210,22 +278,21 @@
           v-if="this.$store.state.apiError"
           class="flex flex-col mt-6 w-1/2 bg-red-600 rounded-md h-auto p-4"
         >
-        <div class="mb-2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6 stroke-current text-white inline-block mr-2"
-            fill="none"
-            viewBox="0 0 24 24"
-            
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-            />
-          </svg>
-          <p class="font-bold text-white inline-block">Ooops!</p>
+          <div class="mb-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 stroke-current text-white inline-block mr-2"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <p class="font-bold text-white inline-block">Ooops!</p>
           </div>
           <div
             class="flex flex-wrap w-full bg-gray-100 rounded-md opacity-80 p-3"
@@ -337,6 +404,9 @@ export default {
     return {};
   },
   methods: {
+    openTooltip() {
+      this.$store.commit("setTooltipSuperAdmin");
+    },
     goToWorkspace() {
       let workspaceUrl = this.$store.state.workspace.workspaceUrl;
       console.log(workspaceUrl);

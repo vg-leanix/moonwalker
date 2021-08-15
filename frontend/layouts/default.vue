@@ -1,9 +1,11 @@
 <template>
-  <div class="">
+  
+    <div class="z-10 overflow-hidden">
       <AppHeader />
-    
-    <Nuxt />
-  </div>
+
+      <Nuxt />
+    </div>
+  
 </template>
 
 
