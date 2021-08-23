@@ -4,6 +4,10 @@
 ![alt text](https://github.com/vg-leanix/moonwalker/blob/main/thumbnail.png "Moonshot")
 
 
+# Demo
+![alt text](https://github.com/vg-leanix/moonwalker/blob/main/thumbnail-video.png "Moonshot")
+
+
 
 
 # Installation
